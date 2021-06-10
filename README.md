@@ -18,7 +18,7 @@ $ yarn add overd -D
 ```
 
 ```bash
-# install all devDependencies that overd needs, [why](#why-should-i-need-to-install-devdependencies-myself)?
+# install all devDependencies that overd needs
 $ yarn add \
   @babel/core@7.14.3 \
   @babel/plugin-proposal-class-properties@7.13.0 \
@@ -97,7 +97,14 @@ $ yarn add \
   workbox-webpack-plugin@6.1.5 -D
 ```
 
+[Why should I need to install devDependencies myself ?](#why-should-i-need-to-install-devdependencies-myself)?
+
 ### Why should I need to install devDependencies myself?
+
+In today's pipeline, we are using so many code quality check tools including `checkmarx`, `sonar`, `whitesource`.
+Those tools checks our dependencies constantly, and make our pipeline failed once there is one potential security vulnerabilities.
+The problem is that building tools may not fix the security problem as soon as possible. There for, we are more willing to have user to install
+all the devDependencies by themself instead of using `yarn resolutions`.
 
 ### Features
 
