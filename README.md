@@ -18,7 +18,7 @@ $ yarn add overd -D
 ```
 
 ```bash
-# install all devDependencies that overd needs, why?
+# install all devDependencies that overd needs, [why](#why-should-i-need-to-install-devdependencies-myself)?
 $ yarn add \
   @babel/core@7.14.3 \
   @babel/plugin-proposal-class-properties@7.13.0 \
@@ -113,9 +113,9 @@ $ yarn add \
 
 ### FAQ
 
-#### Override
+#### Override default config
 
-_webpack-overd.js_
+Put a _webpack-overd.js_ under your project's space, then you revise the webpack config easily.
 
 ```js
 /**
@@ -136,12 +136,3 @@ module.exports = function (config) {
 [MIT](https://opensource.org/licenses/MIT)
 
 Copyright (c) 2021-present, Army-U
-
-<!--
-```bash
-APP_NAME package.json
-``` -->
-
-```
-
-```
