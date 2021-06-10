@@ -23,11 +23,6 @@ const config: webpack.Configuration = {
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js']
   },
-  externals: [
-    {
-      '@eureka/ui-managers': '__EurekaManagers__.default'
-    }
-  ],
   module: {
     // noParse: '',
     strictExportPresence: true,

@@ -1,11 +1,9 @@
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { prepareUrls } from 'react-dev-utils/WebpackDevServerUtils';
-import HtmlWebpackTagsPlugin from 'html-webpack-tags-plugin';
 import { requireFromProjectCWD, pathResolve } from './utils/path-resolve';
 import clearConsole from 'react-dev-utils/clearConsole';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { GenerateSW } from 'workbox-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { merge } from 'webpack-merge';
 import webpack from 'webpack';
 import chalk from 'chalk';
@@ -45,15 +43,12 @@ class ClearWebpackDevServerMessagePlugin {
 
 // e.g, 2105
 const PORT = Number(process.env.PORT);
-// e.g, __proxyForActivityPlanningApplicationWindow
-const GLOBAL_OBJECT = process.env.GLOBAL_OBJECT;
 
 const config: webpack.Configuration & { devServer: devServer.Configuration } = {
   mode: 'development',
   devtool: 'eval-source-map',
   output: {
-    publicPath: `http://localhost:${PORT}/`,
-    globalObject: GLOBAL_OBJECT
+    publicPath: `http://localhost:${PORT}/`
   },
   module: {
     rules: [
@@ -103,20 +98,6 @@ const config: webpack.Configuration & { devServer: devServer.Configuration } = {
   },
   plugins: [
     new ClearWebpackDevServerMessagePlugin(),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: `./node_modules/@eureka/ui-managers/dev/`,
-          to: 'assets',
-          toType: 'dir',
-          force: true
-        }
-      ]
-    }),
-    new HtmlWebpackTagsPlugin({
-      tags: ['assets/static/js/ui-managers.js'],
-      append: false
-    }),
     new HtmlWebpackPlugin({
       title: requireFromProjectCWD('./package.json').name,
       template: './public/index.html'

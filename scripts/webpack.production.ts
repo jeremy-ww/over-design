@@ -46,29 +46,27 @@ const config: webpack.Configuration = {
     /**
      * @see https://github.com/webpack/webpack/blob/master/examples/common-chunk-and-vendor-chunk/webpack.config.js
      */
-    // splitChunks: {
-    //   cacheGroups: {
-    //     vendors: {
-    //       name: 'vendors',
-    //       test: /node_modules/,
-    //       priority: 10,
-    //       chunks: 'initial',
-    //       enforce: true,
-    //     },
-    //     common: {
-    //       name: 'common',
-    //       minChunks: 2,
-    //       chunks: 'initial',
-    //       reuseExistingChunk: true,
-    //     },
-    //   },
-    //   maxAsyncRequests: Infinity,
-    //   maxInitialRequests: Infinity,
-    // },
-    // mergeDuplicateChunks: true,
-    // runtimeChunk: true,
-    splitChunks: false,
-    runtimeChunk: false,
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          name: 'vendors',
+          test: /node_modules/,
+          priority: 10,
+          chunks: 'initial',
+          enforce: true
+        },
+        common: {
+          name: 'common',
+          minChunks: 2,
+          chunks: 'initial',
+          reuseExistingChunk: true
+        }
+      },
+      maxAsyncRequests: Infinity,
+      maxInitialRequests: Infinity
+    },
+    mergeDuplicateChunks: true,
+    runtimeChunk: true,
     minimize: false,
     minimizer: [
       new TerserPlugin({
