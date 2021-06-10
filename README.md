@@ -97,14 +97,17 @@ $ yarn add \
   workbox-webpack-plugin@6.1.5 -D
 ```
 
-[Why should I need to install devDependencies myself ?](#why-should-i-need-to-install-devdependencies-myself)?
+[Why should I need to install devDependencies myself ?](#why-should-i-need-to-install-devdependencies-myself)
 
 ### Why should I need to install devDependencies myself?
 
 In today's pipeline, we are using so many code quality check tools including `checkmarx`, `sonar`, `whitesource`.
-Those tools checks our dependencies constantly, and make our pipeline failed once there is one potential security vulnerabilities.
+Those tools checks our dependencies constantly, and make our pipeline failed once there is one potential security vulnerabilities existed.
 The problem is that building tools may not fix the security problem as soon as possible. There for, we are more willing to have user to install
-all the devDependencies by themself instead of using `yarn resolutions`.
+all the devDependencies by themself instead of using `yarn resolutions` for the two purpose:
+
+1. Avoiding duplicated package like typescript, user may install it already.
+2. Make dependencies straightforward.
 
 ### Features
 

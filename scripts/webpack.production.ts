@@ -118,7 +118,7 @@ const config: webpack.Configuration = {
       chunkFilename: 'assets/css/[name].[contenthash:8].chunk.css'
     }) as any,
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: './static/index.html',
       minify: {
         removeComments: true,
         collapseWhitespace: true,

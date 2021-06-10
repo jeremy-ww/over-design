@@ -1,6 +1,5 @@
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 import DuplicatePackageCheckerPlugin from 'duplicate-package-checker-webpack-plugin';
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 import excludeNodeModulesForAllOS from './utils/exclude-node-module';
 import { requireFromProjectCWD, pathResolve } from './utils/path-resolve';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
@@ -13,7 +12,7 @@ dotenv.config();
 const config: webpack.Configuration = {
   entry: './src/index',
   output: {
-    path: pathResolve('./build'),
+    path: pathResolve('./dist'),
     filename: 'assets/js/[name].js',
     publicPath: '/',
     crossOriginLoading: 'anonymous',
@@ -73,7 +72,7 @@ const config: webpack.Configuration = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'public',
+          from: 'static',
           globOptions: {
             ignore: ['**/index.html']
           },
@@ -99,18 +98,6 @@ const config: webpack.Configuration = {
         test: /\.js$/,
         attribute: 'crossorigin',
         value: 'anonymous'
-      }
-    }),
-    new WebpackManifestPlugin({
-      fileName: 'asset-manifest.json',
-      generate: (seed: any, files: any) => {
-        const manifestFiles = files.reduce(function (manifest: any, file: any) {
-          manifest[file.name] = file.path;
-          return manifest;
-        }, seed);
-        return {
-          files: manifestFiles
-        };
       }
     })
   ]

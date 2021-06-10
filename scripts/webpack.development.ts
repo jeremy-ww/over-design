@@ -47,9 +47,6 @@ const PORT = Number(process.env.PORT);
 const config: webpack.Configuration & { devServer: devServer.Configuration } = {
   mode: 'development',
   devtool: 'eval-source-map',
-  output: {
-    publicPath: `http://localhost:${PORT}/`
-  },
   module: {
     rules: [
       {
@@ -100,7 +97,7 @@ const config: webpack.Configuration & { devServer: devServer.Configuration } = {
     new ClearWebpackDevServerMessagePlugin(),
     new HtmlWebpackPlugin({
       title: requireFromProjectCWD('./package.json').name,
-      template: './public/index.html'
+      template: './static/index.html'
     }),
     new HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin({
