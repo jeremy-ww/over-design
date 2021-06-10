@@ -125,7 +125,7 @@ all the devDependencies by themself instead of using `yarn resolutions` for the 
 
 #### Override default config
 
-Put a _webpack-overd.js_ under your project's space, then you revise the webpack config easily.
+Put a **webpack-overd.ts** under your project's space, then you revise the webpack config easily.
 
 ```ts
 export default function (config: import('webpack').Configuration) {
