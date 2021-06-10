@@ -127,18 +127,15 @@ all the devDependencies by themself instead of using `yarn resolutions` for the 
 
 Put a _webpack-overd.js_ under your project's space, then you revise the webpack config easily.
 
-```js
-/**
- * @param {import('webpack').Configuration} config
- */
-module.exports = function (config) {
+```ts
+export default function (config: import('webpack').Configuration) {
   if (config.mode === 'development') {
     config.experiments = {
       lazyCompilation: true
     };
   }
   console.log(config);
-};
+}
 ```
 
 ### License
