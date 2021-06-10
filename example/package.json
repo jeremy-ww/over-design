@@ -4,11 +4,6 @@
   "private": true,
   "scripts": {
     "build": "ui-utils build",
-    "cy:test": "NODE_ENV=test BY_CYPRESS=true cypress run-ct -b chrome",
-    "cy:test:ci": "yarn run cy:test --headless",
-    "cy:test:debug": "yarn run cy:test --no-exit",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "yarn lint --fix",
     "start": "ui-utils serve"
   },
   "browserslist": {
@@ -25,7 +20,6 @@
     ]
   },
   "dependencies": {
-    "@babel/runtime": "7.14.0",
     "@emotion/cache": "11.4.0",
     "@emotion/react": "11.4.0",
     "@emotion/styled": "11.3.0",
@@ -69,13 +63,12 @@
     "@babel/preset-react": "7.13.13",
     "@babel/preset-typescript": "7.13.0",
     "@emotion/babel-plugin": "11.3.0",
-    "@eureka/ui-utils": "0.3.20",
     "@intervolga/optimize-cssnano-plugin": "1.0.6",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
     "@types/copy-webpack-plugin": "8.0.0",
+    "@types/css-minimizer-webpack-plugin": "3.0.0",
     "@types/dotenv-webpack": "7.0.2",
     "@types/duplicate-package-checker-webpack-plugin": "2.1.1",
-    "@types/html-webpack-tags-plugin": "2.0.16",
     "@types/mini-css-extract-plugin": "1.4.3",
     "@types/node": "15.9.0",
     "@types/query-string": "6.3.0",
@@ -115,6 +108,7 @@
     "html-webpack-plugin": "5.3.1",
     "mini-css-extract-plugin": "1.6.0",
     "nodemon": "2.0.7",
+    "overd": "0.0.1",
     "prettier": "2.3.0",
     "react": "17.0.2",
     "react-dev-utils": "11.0.4",

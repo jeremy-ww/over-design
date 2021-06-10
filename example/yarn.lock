@@ -1140,13 +1140,6 @@
   dependencies:
     js-event-bus "^1.0.3"
 
-"@eureka/ui-utils@0.3.20":
-  version "0.3.20"
-  resolved "https://nexus.eurekacloud.io/repository/npm-public/@eureka/ui-utils/-/ui-utils-0.3.20.tgz#68f048844d20370a2a11fbb70e0b876f2a71d847"
-  integrity sha512-mqaR8gq6IELnq5o8W5Op11JUb7RaKryzEvYi+xnA//YyljFSHC/aLVYS08RGLzBz3bnIweqHeN6JwOhBOB3wcg==
-  dependencies:
-    yargs "17.0.0-candidate.13"
-
 "@hapi/address@^2.1.2":
   version "2.1.4"
   resolved "https://nexus.eurekacloud.io/repository/npm-public/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
@@ -1403,6 +1396,23 @@
     tapable "^2.0.0"
     webpack "^5.1.0"
 
+"@types/css-minimizer-webpack-plugin@3.0.0":
+  version "3.0.0"
+  resolved "https://nexus.eurekacloud.io/repository/npm-public/@types/css-minimizer-webpack-plugin/-/css-minimizer-webpack-plugin-3.0.0.tgz#c32c8f9cfb23183fd511610ce6fafd87df041eb6"
+  integrity sha512-7Ebz8x+D5UKtCAfE4kcpICaJ93+Rh9SJkXzxLyUda+xEgzF6FmEJQcbsMw4X7U7Uf3bHkiuVF0o4MuKYhvr15Q==
+  dependencies:
+    "@types/cssnano" "*"
+    postcss "^8.2.9"
+    tapable "^2.2.0"
+    webpack "^5.37.0"
+
+"@types/cssnano@*":
+  version "4.0.0"
+  resolved "https://nexus.eurekacloud.io/repository/npm-public/@types/cssnano/-/cssnano-4.0.0.tgz#f1bb29d6d0813861a3d87e02946b2988d0110d4e"
+  integrity sha512-BC/2ibKZfPIaBLBNzkitdW1IvvX/LKW6/QXGc4Su/tAJ7mQ3f2CKBuGCCKaqGAnoKwzfuC7G/recpkARwdOwuA==
+  dependencies:
+    postcss "5 - 7"
+
 "@types/d3-path@^1":
   version "1.0.9"
   resolved "https://nexus.eurekacloud.io/repository/npm-public/@types/d3-path/-/d3-path-1.0.9.tgz#73526b150d14cd96e701597cbf346cfd1fd4a58c"
@@ -1536,13 +1546,6 @@
     "@types/html-minifier" "*"
     "@types/tapable" "^1"
     "@types/webpack" "^4"
-
-"@types/html-webpack-tags-plugin@2.0.16":
-  version "2.0.16"
-  resolved "https://nexus.eurekacloud.io/repository/npm-public/@types/html-webpack-tags-plugin/-/html-webpack-tags-plugin-2.0.16.tgz#16d0eb5eda5280c07c3fda632144598bb3f13736"
-  integrity sha512-ZMFQdu9hY8XGAQb8gfbyZW0JIbC6HUHDDqjdEdpgwi/I660T/vWMkZvcyRUVE0VYS0PrAPIPd91uaXYw0RzsdQ==
-  dependencies:
-    html-webpack-tags-plugin "*"
 
 "@types/http-proxy@^1.17.5":
   version "1.17.6"
@@ -4932,15 +4935,6 @@ html-webpack-plugin@5.3.1:
     pretty-error "^2.1.1"
     tapable "^2.0.0"
 
-html-webpack-tags-plugin@*:
-  version "3.0.1"
-  resolved "https://nexus.eurekacloud.io/repository/npm-public/html-webpack-tags-plugin/-/html-webpack-tags-plugin-3.0.1.tgz#52baf2feec879a4108e6955b4e81376581a334dc"
-  integrity sha512-P/cfYDqXtgXoGFUv8zi/er8XFU5ztQmqp+VwmnhZEH8L35Q2YRKIb9P+dRiykLIDZF0NMt+l/uj+jmttKwmLvg==
-  dependencies:
-    glob "^7.1.6"
-    minimatch "^3.0.4"
-    slash "^3.0.0"
-
 htmlparser2@^3.10.1:
   version "3.10.1"
   resolved "https://nexus.eurekacloud.io/repository/npm-public/htmlparser2/-/htmlparser2-3.10.1.tgz#bd679dc3f59897b6a34bb10749c855bb53a9392f"
@@ -6639,6 +6633,13 @@ original@^1.0.0:
   dependencies:
     url-parse "^1.4.3"
 
+overd@0.0.1:
+  version "0.0.1"
+  resolved "https://nexus.eurekacloud.io/repository/npm-public/overd/-/overd-0.0.1.tgz#9176734104ee2ab0058fffc293486b95668874c8"
+  integrity sha512-Cai09MR+icpsfFsVw5+WDJ+0n6ONlGRTZsm6MN6YlHIL9RuD7KyL9OeXAQySLATUOGKYsVzZuVRmsbji4fcmSQ==
+  dependencies:
+    yargs "17.0.0-candidate.13"
+
 p-cancelable@^1.0.0:
   version "1.1.0"
   resolved "https://nexus.eurekacloud.io/repository/npm-public/p-cancelable/-/p-cancelable-1.1.0.tgz#d078d15a3af409220c886f1d9a0ca2e441ab26cc"
@@ -7388,7 +7389,7 @@ postcss-value-parser@^4.0.2, postcss-value-parser@^4.1.0:
   resolved "https://nexus.eurekacloud.io/repository/npm-public/postcss-value-parser/-/postcss-value-parser-4.1.0.tgz#443f6a20ced6481a2bda4fa8532a6e55d789a2cb"
   integrity sha512-97DXOFbQJhk71ne5/Mt6cOu6yxsSfM0QGQyl0L25Gca4yGWEGJaig7l7gbCX623VqTBNGLRLaVUCnNkcedlRSQ==
 
-postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.27:
+"postcss@5 - 7", postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.27:
   version "7.0.35"
   resolved "https://nexus.eurekacloud.io/repository/npm-public/postcss/-/postcss-7.0.35.tgz#d2be00b998f7f211d8a276974079f2e92b970e24"
   integrity sha512-3QT8bBJeX/S5zKTTjTCIjRF3If4avAT6kqxcASlTWEtAFCb9NH0OUxNDfgZSWdP5fJnBYCMEWkIFfWeugjzYMg==
@@ -9581,7 +9582,7 @@ webpack-sources@^2.2.0, webpack-sources@^2.3.0:
     source-list-map "^2.0.1"
     source-map "^0.6.1"
 
-webpack@5.38.1, webpack@^5, webpack@^5.1.0:
+webpack@5.38.1, webpack@^5, webpack@^5.1.0, webpack@^5.37.0:
   version "5.38.1"
   resolved "https://nexus.eurekacloud.io/repository/npm-public/webpack/-/webpack-5.38.1.tgz#5224c7f24c18e729268d3e3bc97240d6e880258e"
   integrity sha512-OqRmYD1OJbHZph6RUMD93GcCZy4Z4wC0ele4FXyYF0J6AxO1vOSuIlU1hkS/lDlR9CDYBz64MZRmdbdnFFoT2g==

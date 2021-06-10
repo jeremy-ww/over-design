@@ -7,7 +7,7 @@
   "author": "Jeremy Wu <wuchengkai0@gmail.com>",
   "main": "index.js",
   "bin": {
-    "ui-utils": "./bin/ui-utils"
+    "overd": "./bin/overd"
   },
   "files": [
     "scripts/*",
