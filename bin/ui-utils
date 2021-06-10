@@ -1,0 +1,48 @@
+#!/usr/bin/env node
+
+const { execSync } = require('child_process');
+const nodemon = require('nodemon');
+const path = require('path');
+
+const cwd = (str) => path.resolve('node_modules/overd/', str);
+
+function serve() {
+  nodemon({
+    watch: [cwd('scripts')],
+    ext: 'ts',
+    exec: `NODE_ENV=development TS_NODE_PROJECT=${cwd(
+      'tsconfig-for-webpack-config.json'
+    )} webpack serve --progress --config  ${cwd('scripts/webpack.development.ts')}`
+  });
+
+  nodemon
+    .on('start', function () {})
+    .on('quit', function () {
+      process.exit();
+    })
+    .on('restart', function () {});
+}
+
+function build() {
+  execSync(
+    `NODE_ENV=production TS_NODE_PROJECT=${cwd(
+      'tsconfig-for-webpack-config.json'
+    )} webpack --progress --config ${cwd('scripts/webpack.production.ts')}`,
+    {
+      stdio: 'inherit'
+    }
+  );
+}
+
+const yargs = require('yargs')
+  .version(require('../package.json').version)
+  .alias('version', 'v')
+  .usage('Usage: $0 <command> [options]')
+  .command('serve', 'serve for development', serve)
+  .command('build', 'build for production', build)
+  .example('$0 serve', 'equivalent to webpack serve --progress')
+  .example('$0 build', 'equivalent to webpack --progress')
+  .alias('help', 'h')
+  .locale('en');
+
+if (yargs.argv._.length === 0) yargs.showHelp();
