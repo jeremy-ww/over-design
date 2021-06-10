@@ -89,7 +89,7 @@ const config: webpack.Configuration = {
     new webpack.EnvironmentPlugin({
       // it seems that cypress-webpack will do this for us
       // NODE_ENV: 'test',
-      REACT_APP_NAME: requireFromProjectCWD('./package.json').name
+      APP_NAME: requireFromProjectCWD('./package.json').name
     }),
     // @ts-ignore
     new DuplicatePackageCheckerPlugin({

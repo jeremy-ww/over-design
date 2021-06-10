@@ -5,5 +5,5 @@ yarn add @types/workbox-window@4.3.3 @typescript-eslint/eslint-plugin@4.26.0 @ty
 ```
 
 ```bash
-REACT_APP_NAME package.json
+APP_NAME package.json
 ```
