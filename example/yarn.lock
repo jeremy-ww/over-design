@@ -5990,10 +5990,10 @@ original@^1.0.0:
   dependencies:
     url-parse "^1.4.3"
 
-overd@0.0.2:
-  version "0.0.2"
-  resolved "https://registry.npmjs.org/overd/-/overd-0.0.2.tgz#5e9df69bffa378120e46f819fd6690027c2f2171"
-  integrity sha512-Hl6rF1sf20IVZoxa9u9TYmxocRy9Y71u/RvtBZviOIuYxWh3fzZM7KHUjF2206n3A7f2o+wxO3T40cGLI+gwag==
+overd@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/overd/-/overd-0.0.3.tgz#97808d226cf95b9a72348cc350cc40d54f6bf1c5"
+  integrity sha512-n+lBAcKERV3a0GCJpLsmHuxFHCDRZ7Ku/1L+h2maq4HxID2uRmnfdZiT6tJkC0tMIX2BAE5hfv1u2uT/hTMtUQ==
   dependencies:
     yargs "17.0.0-candidate.13"
 

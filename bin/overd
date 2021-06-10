@@ -20,7 +20,9 @@ function serve() {
     .on('quit', function () {
       process.exit();
     })
-    .on('restart', function () {});
+    .on('restart', function () {
+      console.log('Restarting');
+    });
 }
 
 function build() {
