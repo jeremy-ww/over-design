@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "ui-utils build",
-    "start": "ui-utils serve"
+    "build": "overd build",
+    "start": "overd serve"
   },
   "browserslist": {
     "test": [
@@ -23,35 +23,11 @@
     "@emotion/cache": "11.4.0",
     "@emotion/react": "11.4.0",
     "@emotion/styled": "11.3.0",
-    "@eureka/ui-components": "0.0.47",
-    "@eureka/ui-managers": "0.0.20",
-    "@reduxjs/toolkit": "1.5.1",
-    "@ui5/webcomponents": "1.0.0-rc.14",
-    "@ui5/webcomponents-fiori": "1.0.0-rc.14",
-    "@ui5/webcomponents-icons": "1.0.0-rc.14",
-    "@ui5/webcomponents-react": "0.16.2",
-    "@ui5/webcomponents-react-charts": "0.16.2",
-    "async-validator": "3.5.2",
-    "axios": "^0.21.1",
-    "classnames": "2.3.1",
-    "dateformat": "4.5.1",
-    "eureka": "1.0.0-31",
-    "fundamental-react": "^0.13.1",
-    "i18next": "^20.3.1",
-    "i18next-browser-languagedetector": "^6.1.1",
-    "i18next-xhr-backend": "3.2.2",
-    "lodash": "4.17.21",
-    "moment": "^2.29.1",
-    "moment-timezone": "^0.5.32",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-i18next": "^11.10.0",
     "react-redux": "^7.2.4",
     "react-router": "5.2.0",
-    "react-router-dom": "5.2.0",
-    "redux": "^4.1.0",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "react-router-dom": "5.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.14.3",
@@ -108,7 +84,7 @@
     "html-webpack-plugin": "5.3.1",
     "mini-css-extract-plugin": "1.6.0",
     "nodemon": "2.0.7",
-    "overd": "0.0.1",
+    "overd": "0.0.2",
     "prettier": "2.3.0",
     "react": "17.0.2",
     "react-dev-utils": "11.0.4",

@@ -1514,13 +1514,6 @@
     "@types/tapable" "^1"
     "@types/webpack" "^4"
 
-"@types/html-webpack-tags-plugin@2.0.16":
-  version "2.0.16"
-  resolved "https://registry.npmjs.org/@types/html-webpack-tags-plugin/-/html-webpack-tags-plugin-2.0.16.tgz#16d0eb5eda5280c07c3fda632144598bb3f13736"
-  integrity sha512-ZMFQdu9hY8XGAQb8gfbyZW0JIbC6HUHDDqjdEdpgwi/I660T/vWMkZvcyRUVE0VYS0PrAPIPd91uaXYw0RzsdQ==
-  dependencies:
-    html-webpack-tags-plugin "*"
-
 "@types/http-proxy@^1.17.5":
   version "1.17.6"
   resolved "https://registry.npmjs.org/@types/http-proxy/-/http-proxy-1.17.6.tgz#62dc3fade227d6ac2862c8f19ee0da9da9fd8616"
@@ -4604,15 +4597,6 @@ html-webpack-plugin@5.3.1:
     lodash "^4.17.20"
     pretty-error "^2.1.1"
     tapable "^2.0.0"
-
-html-webpack-tags-plugin@*:
-  version "3.0.1"
-  resolved "https://registry.npmjs.org/html-webpack-tags-plugin/-/html-webpack-tags-plugin-3.0.1.tgz#52baf2feec879a4108e6955b4e81376581a334dc"
-  integrity sha512-P/cfYDqXtgXoGFUv8zi/er8XFU5ztQmqp+VwmnhZEH8L35Q2YRKIb9P+dRiykLIDZF0NMt+l/uj+jmttKwmLvg==
-  dependencies:
-    glob "^7.1.6"
-    minimatch "^3.0.4"
-    slash "^3.0.0"
 
 htmlparser2@^6.1.0:
   version "6.1.0"
