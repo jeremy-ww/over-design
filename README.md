@@ -111,6 +111,26 @@ $ yarn add \
 | Lazy compilation     | Todo   |
 | Yarn pnp             | Todo   |
 
+### FAQ
+
+#### Override
+
+_webpack-overd.js_
+
+```js
+/**
+ * @param {import('webpack').Configuration} config
+ */
+module.exports = function (config) {
+  if (config.mode === 'development') {
+    config.experiments = {
+      lazyCompilation: true
+    };
+  }
+  console.log(config);
+};
+```
+
 ### License
 
 [MIT](https://opensource.org/licenses/MIT)
@@ -121,3 +141,7 @@ Copyright (c) 2021-present, Army-U
 ```bash
 APP_NAME package.json
 ``` -->
+
+```
+
+```
