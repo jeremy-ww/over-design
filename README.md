@@ -138,7 +138,7 @@ Put a **webpack-overd.ts** under your project's space, then you revise the webpa
 export default function (config: import('webpack').Configuration) {
   if (config.mode === 'development') {
     config.experiments = {
-      lazyCompilation: true
+      lazyCompilation: false // disable lazyCompilation
     };
   }
   console.log(config);
