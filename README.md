@@ -111,7 +111,9 @@ all the devDependencies by themself instead of using `yarn resolutions` for the 
 
 ### What's the difference between create-react-app?
 
-TODO
+- Overd don't provide babel configuration
+- Overd don't provide eslint configuration
+- Revise webpack config easily without eject
 
 ### Features
 
