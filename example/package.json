@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "overd build",
-    "start": "overd serve"
+    "start": "overd"
   },
   "browserslist": {
     "test": [
