@@ -26,14 +26,6 @@ const config: webpack.Configuration = {
   module: {
     rules: [
       {
-        test: /\.less$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { sourceMap: false } },
-          { loader: 'less-loader', options: { sourceMap: false } }
-        ]
-      },
-      {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, { loader: 'css-loader', options: { sourceMap: false } }]
       }

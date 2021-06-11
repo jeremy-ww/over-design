@@ -34,6 +34,7 @@ $ yarn add \
     @types/webpack@5.28.0 \
     @types/webpack-bundle-analyzer@4.4.0 \
     @types/webpack-dev-server@3.11.4 \
+    @types/workbox-webpack-plugin@5.1.6 \
     babel-loader@8.2.2 \
     chalk@4.1.1 \
     copy-webpack-plugin@9.0.0 \
@@ -88,7 +89,6 @@ all the devDependencies by themself instead of using `yarn resolutions` for the 
 | Persistent cache     | ✅     |
 | React Refresh        | ✅     |
 | Thread-loader        | ✅     |
-| Less support         | ✅     |
 | Configurable webpack | ✅     |
 | Lazy compilation     | ✅     |
 | Auto restart         | ✅     |

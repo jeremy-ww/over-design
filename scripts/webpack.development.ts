@@ -50,14 +50,6 @@ const config: webpack.Configuration & { devServer: devServer.Configuration } = {
   module: {
     rules: [
       {
-        test: /\.less$/i,
-        use: [
-          'style-loader',
-          { loader: 'css-loader', options: { sourceMap: false } },
-          { loader: 'less-loader', options: { sourceMap: false } }
-        ]
-      },
-      {
         test: /\.css$/i,
         use: ['style-loader', { loader: 'css-loader', options: { sourceMap: false } }]
       }
