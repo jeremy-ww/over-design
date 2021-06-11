@@ -124,7 +124,8 @@ all the devDependencies by themself instead of using `yarn resolutions` for the 
 | Thread-loader        | ✅     |
 | Less support         | ✅     |
 | Configurable webpack | ✅     |
-| Lazy compilation     | Todo   |
+| Lazy compilation     | ✅     |
+| Auto restart         | Todo   |
 | Yarn pnp             | Todo   |
 
 ### FAQ

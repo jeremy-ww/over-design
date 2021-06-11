@@ -69,9 +69,9 @@ const config: webpack.Configuration & { devServer: devServer.Configuration } = {
       config: [__filename]
     }
   },
-  // experiments: {
-  //   lazyCompilation: true
-  // },
+  experiments: {
+    lazyCompilation: true
+  },
   devServer: {
     hot: true,
     port: PORT,
