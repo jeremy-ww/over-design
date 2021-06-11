@@ -1,9 +1,7 @@
 <h1 align="center">Overd</h1>
 
 <p align="center">
-  <a href="https://david-dm.org/Army-U/overd"><img src="https://flat.badgen.net/david/dep/Army-U/overd" alt="Dependency Status" /></a>
   <a href="https://www.npmjs.com/package/overd"><img src="https://flat.badgen.net/npm/v/overd" alt="Version" /></a>
-  <a href="https://www.npmjs.com/package/overd"><img src="https://flat.badgen.net/npm/dt/overd" alt="Download" /></a>
 </p>
 
 <img src="./docs/screenshot.png" />
