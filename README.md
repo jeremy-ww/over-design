@@ -109,6 +109,10 @@ all the devDependencies by themself instead of using `yarn resolutions` for the 
 1. Avoiding duplicated package like typescript, user may install it already.
 2. Make dependencies straightforward.
 
+### What's the difference between create-react-app?
+
+TODO
+
 ### Features
 
 | Feature              | Status |
