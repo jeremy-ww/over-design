@@ -91,7 +91,7 @@ all the devDependencies by themself instead of using `yarn resolutions` for the 
 | Less support         | ✅     |
 | Configurable webpack | ✅     |
 | Lazy compilation     | ✅     |
-| Auto restart         | Todo   |
+| Auto restart         | ✅     |
 | Yarn pnp             | Todo   |
 
 ### FAQ

@@ -8,7 +8,7 @@ const cwd = (str) => path.resolve('node_modules/overd/', str);
 
 function serve() {
   nodemon({
-    watch: [cwd('scripts')],
+    watch: [cwd('scripts'), './webpack-overd.ts'],
     ext: 'ts',
     exec: `NODE_ENV=development TS_NODE_PROJECT=${cwd(
       'tsconfig-for-webpack-config.json'
@@ -21,7 +21,7 @@ function serve() {
       process.exit();
     })
     .on('restart', function () {
-      console.log('Restarting');
+      console.log('Restarting...');
     });
 }
 

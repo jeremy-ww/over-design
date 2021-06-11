@@ -1,3 +1,3 @@
 export default function (config: import('webpack').Configuration) {
-  // console.log(config);
+  console.log(config);
 }
