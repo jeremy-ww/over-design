@@ -6146,10 +6146,10 @@ original@^1.0.0:
   dependencies:
     url-parse "^1.4.3"
 
-overd@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/overd/-/overd-1.0.0.tgz#bd0368123d5cabb3d82c0df5250f093551abeda9"
-  integrity sha512-26GmNEmtm/se+Yw+CBuEmqCrghmtVOzk3zOtINvsEURbFLpSHxcIdg91OJp78IDuzo8tGyqJ+tVqO9gA00QUOA==
+overd@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/overd/-/overd-1.0.1.tgz#941e5c74dc7c9965c273d401f5d6a39877fb3100"
+  integrity sha512-dEg+Q3PJkT2ZxxE7UJfN0n0siOKR8hH4/Y8maH4xkN2Cfm1Hsgq5ZUcBqvT7bMYn3euGVpGeHSyA6uQvYRFNog==
   dependencies:
     yargs "17.0.1"
   optionalDependencies:
