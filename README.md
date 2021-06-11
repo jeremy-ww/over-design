@@ -6,7 +6,7 @@
   <a href="https://www.npmjs.com/package/overd"><img src="https://flat.badgen.net/npm/dt/overd" alt="Download" /></a>
 </p>
 
-<img src="./docs/screenshot.png>
+<img src="./docs/screenshot.png" />
 
 ### Introduction
 
