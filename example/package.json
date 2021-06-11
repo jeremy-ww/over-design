@@ -77,7 +77,7 @@
     "html-webpack-plugin": "5.3.1",
     "mini-css-extract-plugin": "1.6.0",
     "nodemon": "2.0.7",
-    "overd": "0.0.6",
+    "overd": "1.0.0",
     "prettier": "2.3.0",
     "react-dev-utils": "11.0.4",
     "react-refresh": "0.10.0",
