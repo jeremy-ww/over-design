@@ -59,7 +59,6 @@ $ yarn add \
     webpack-bundle-analyzer@4.4.2 \
     webpack-cli@4.7.2 \
     webpack-dev-server@3.11.2 \
-    webpack-manifest-plugin@3.1.1 \
     webpack-merge@5.8.0 \
     workbox-webpack-plugin@6.1.5 -D
 ```
