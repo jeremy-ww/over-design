@@ -53,7 +53,6 @@ $ yarn add \
     terser-webpack-plugin@5.1.3 \
     thread-loader@3.0.4 \
     ts-node@10.0.0 \
-    type-fest@1.2.0 \
     typescript@4.3.2 \
     webpack@5.38.1 \
     webpack-bundle-analyzer@4.4.2 \
