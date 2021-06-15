@@ -32,7 +32,6 @@ $ yarn add \
     babel-plugin-module-resolver@4.1.0 \
     eslint@7.27.0 \
     eslint-config-prettier@8.3.0 \
-    eslint-loader@4.0.2 \
     eslint-plugin-react@7.24.0 \
     eslint-plugin-react-hooks@4.2.0 \
     overd@0.0.3 \
