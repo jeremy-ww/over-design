@@ -1,3 +1,4 @@
+/* eslint-env node */
 module.exports = {
   all: true,
   exclude: [
@@ -9,11 +10,11 @@ module.exports = {
     '**/*.less',
     'src/features/activity-planning/create-edit/model/',
     'src/features/activity-planning/create-edit/redux/',
-    'src/features/activity-planning/list-view/models/'
+    'src/features/activity-planning/list-view/models/',
   ],
   include: ['src'],
   /**
    * @see https://github.com/cypress-io/code-coverage/issues/216#issuecomment-635952099
    */
-  reporter: process.env.CI ? ['html', 'lcov'] : ['html']
+  reporter: process.env.CI ? ['html', 'lcov'] : ['html'],
 };

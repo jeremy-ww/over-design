@@ -8,11 +8,11 @@ module.exports = {
          * @see https://github.com/cypress-io/cypress/tree/develop/npm/react/cypress/component/advanced/mocking-imports
          */
         useBuiltIns: 'usage',
-        corejs: 3
-      }
+        corejs: 3,
+      },
     ],
     ['@babel/preset-react', { runtime: 'automatic', importSource: '@emotion/react' }],
-    '@babel/preset-typescript'
+    '@babel/preset-typescript',
   ],
   plugins: [
     process.env.NODE_ENV === 'development' && 'react-refresh/babel',
@@ -26,10 +26,10 @@ module.exports = {
         alias: {
           cypress: './cypress',
           src: './src',
-          misc: './misc'
-        }
-      }
-    ]
+          misc: './misc',
+        },
+      },
+    ],
   ].filter(Boolean),
   env: {
     test: {
@@ -37,11 +37,11 @@ module.exports = {
         [
           '@babel/plugin-transform-modules-commonjs',
           {
-            loose: true
-          }
+            loose: true,
+          },
         ],
-        'istanbul'
-      ]
-    }
-  }
+        'istanbul',
+      ],
+    },
+  },
 };
