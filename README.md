@@ -23,6 +23,7 @@ $ yarn add \
     @intervolga/optimize-cssnano-plugin@1.0.6 \
     @pmmmwh/react-refresh-webpack-plugin@0.4.3 \
     @types/copy-webpack-plugin@8.0.0 \
+    @types/html-webpack-tags-plugin@2.0.16 \
     @types/css-minimizer-webpack-plugin@3.0.1 \
     @types/dotenv-webpack@7.0.2 \
     @types/duplicate-package-checker-webpack-plugin@2.1.1 \
