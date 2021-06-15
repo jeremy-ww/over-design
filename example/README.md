@@ -34,6 +34,17 @@ $ yarn add \
     eslint-config-prettier@8.3.0 \
     eslint-plugin-react@7.24.0 \
     eslint-plugin-react-hooks@4.2.0 \
-    overd@0.0.3 \
-    prettier@2.3.0 -D
+    overd@0.0.3 -D
+
+# For lint
+$ yarn add \
+    @typescript-eslint/eslint-plugin@^4.4.1 \
+    @typescript-eslint/parser@4.27.0 \
+    eslint@7.28.0 \
+    eslint-config-airbnb-typescript@12.3.1 \
+    eslint-config-prettier@8.3.0 \
+    eslint-plugin-import@^2.22.0 \
+    eslint-plugin-jsx-a11y@^6.3.1 \
+    eslint-plugin-react@^7.20.3 \
+    eslint-plugin-react-hooks@^4.0.8 -D
 ```
