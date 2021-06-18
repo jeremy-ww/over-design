@@ -20,9 +20,9 @@ function printInstructions(urls: { localUrlForTerminal: string; lanUrlForTermina
   console.log(
     chalk.bold(
       chalk.green(
-        `You can now view ${requireFromProjectCWD('./package.json').name} in the browser.`
-      )
-    )
+        `You can now view ${requireFromProjectCWD('./package.json').name} in the browser.`,
+      ),
+    ),
   );
   console.log();
 
@@ -51,18 +51,18 @@ const config: webpack.Configuration & { devServer: devServer.Configuration } = {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', { loader: 'css-loader', options: { sourceMap: false } }]
-      }
-    ]
+        use: ['style-loader', { loader: 'css-loader', options: { sourceMap: false } }],
+      },
+    ],
   },
   cache: {
     type: 'filesystem',
     buildDependencies: {
-      config: [__filename]
-    }
+      config: [__filename],
+    },
   },
   experiments: {
-    lazyCompilation: true
+    lazyCompilation: true,
   },
   devServer: {
     hot: true,
@@ -72,31 +72,31 @@ const config: webpack.Configuration & { devServer: devServer.Configuration } = {
     transportMode: 'ws',
     injectClient: true,
     historyApiFallback: {
-      disableDotRule: true
+      disableDotRule: true,
     },
     // NOTE: use this for debugging
     // stats: 'verbose',
     overlay: {
-      errors: true
+      errors: true,
     },
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
-    }
+      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
+    },
   },
   plugins: [
     new ClearWebpackDevServerMessagePlugin(),
     new HtmlWebpackPlugin({
       title: requireFromProjectCWD('./package.json').name,
-      template: './static/index.html'
+      template: './static/index.html',
     }),
     new HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin({
-      overlay: false
+      overlay: false,
     }),
-    false && new GenerateSW()
-  ].filter((v): v is webpack.WebpackPluginInstance => Boolean(v))
+    false && new GenerateSW(),
+  ].filter((v): v is webpack.WebpackPluginInstance => Boolean(v)),
 };
 
 const finalConfig = merge(base, config);

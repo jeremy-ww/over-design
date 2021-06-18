@@ -16,18 +16,18 @@ const config: webpack.Configuration = {
     publicPath: '/',
     crossOriginLoading: 'anonymous',
     // NOTE: for non-initial chunk
-    chunkFilename: 'assets/js/[name].chunk.js'
+    chunkFilename: 'assets/js/[name].chunk.js',
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.jsx', '.js']
+    extensions: ['.tsx', '.ts', '.jsx', '.js'],
   },
   module: {
     // noParse: '',
     strictExportPresence: true,
     generator: {
       asset: {
-        filename: 'assets/static/[hash][ext][query]'
-      }
+        filename: 'assets/static/[hash][ext][query]',
+      },
     },
     rules: [
       {
@@ -46,19 +46,19 @@ const config: webpack.Configuration = {
           // },
           {
             loader: 'babel-loader',
-            options: {}
-          }
-        ]
+            options: {},
+          },
+        ],
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/resource'
+        type: 'asset/resource',
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-        type: 'asset/resource'
-      }
-    ]
+        type: 'asset/resource',
+      },
+    ],
   },
   plugins: [
     new CopyWebpackPlugin({
@@ -66,22 +66,22 @@ const config: webpack.Configuration = {
         {
           from: 'static',
           globOptions: {
-            ignore: ['**/index.html']
+            ignore: ['**/index.html'],
           },
-          to: '.'
-        }
-      ]
+          to: '.',
+        },
+      ],
     }),
     new webpack.EnvironmentPlugin({
       // it seems that cypress-webpack will do this for us
       // NODE_ENV: 'test',
-      APP_NAME: requireFromProjectCWD('./package.json').name
+      APP_NAME: requireFromProjectCWD('./package.json').name,
     }),
     // @ts-ignore
     new DuplicatePackageCheckerPlugin({
       exclude(instance: { name: string }) {
         return ['webpack', 'querystring'].includes(instance.name);
-      }
+      },
     }),
     new Dotenv(),
     // @ts-ignore
@@ -89,10 +89,10 @@ const config: webpack.Configuration = {
       custom: {
         test: /\.js$/,
         attribute: 'crossorigin',
-        value: 'anonymous'
-      }
-    })
-  ]
+        value: 'anonymous',
+      },
+    }),
+  ],
 };
 
 export default config;

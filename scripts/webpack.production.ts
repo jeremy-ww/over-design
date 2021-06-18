@@ -20,16 +20,16 @@ const config: webpack.Configuration = {
     // TODO: If we changed the order of imports, contenthash is different
     filename: 'assets/js/[name].[contenthash:8].js',
     // NOTE: for non-initial chunk
-    chunkFilename: 'assets/js/[name].[chunkhash:8].chunk.js'
+    chunkFilename: 'assets/js/[name].[chunkhash:8].chunk.js',
   },
   devtool: 'hidden-source-map',
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, { loader: 'css-loader', options: { sourceMap: false } }]
-      }
-    ]
+        use: [MiniCssExtractPlugin.loader, { loader: 'css-loader', options: { sourceMap: false } }],
+      },
+    ],
   },
   optimization: {
     // NOTE: use this two for debugging
@@ -45,17 +45,17 @@ const config: webpack.Configuration = {
           test: /node_modules/,
           priority: 10,
           chunks: 'initial',
-          enforce: true
+          enforce: true,
         },
         common: {
           name: 'common',
           minChunks: 2,
           chunks: 'initial',
-          reuseExistingChunk: true
-        }
+          reuseExistingChunk: true,
+        },
       },
       maxAsyncRequests: Infinity,
-      maxInitialRequests: Infinity
+      maxInitialRequests: Infinity,
     },
     mergeDuplicateChunks: true,
     runtimeChunk: true,
@@ -92,22 +92,22 @@ const config: webpack.Configuration = {
             // required features to drop conditional branches
             conditionals: true,
             dead_code: true,
-            evaluate: true
+            evaluate: true,
           },
           mangle: {
-            safari10: true
-          }
+            safari10: true,
+          },
         },
         parallel: true,
-        extractComments: false
+        extractComments: false,
       }) as any,
-      new CssMinimizerPlugin()
-    ]
+      new CssMinimizerPlugin(),
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name].[contenthash:8].css',
-      chunkFilename: 'assets/css/[name].[contenthash:8].chunk.css'
+      chunkFilename: 'assets/css/[name].[contenthash:8].chunk.css',
     }) as any,
     new HtmlWebpackPlugin({
       template: './static/index.html',
@@ -121,8 +121,8 @@ const config: webpack.Configuration = {
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true
-      }
+        minifyURLs: true,
+      },
     }),
     report && new BundleAnalyzerPlugin(),
     false &&
@@ -134,11 +134,11 @@ const config: webpack.Configuration = {
             /**
              * @see https://developers.google.com/web/tools/workbox/modules/workbox-routing
              */
-            urlPattern: new RegExp('https://unpkg\\.com/.*')
-          }
-        ]
-      })
-  ].filter((v): v is webpack.WebpackPluginInstance => Boolean(v))
+            urlPattern: new RegExp('https://unpkg\\.com/.*'),
+          },
+        ],
+      }),
+  ].filter((v): v is webpack.WebpackPluginInstance => Boolean(v)),
 };
 
 const finalConfig = merge(base, config);
