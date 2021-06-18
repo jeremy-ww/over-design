@@ -4,28 +4,38 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   env: {
     browser: true,
-    es6: true
+    es6: true,
   },
   parserOptions: {
     ecmaVersion: 2020,
     project: ['./tsconfig.json'],
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
-    sourceType: 'module'
+    sourceType: 'module',
   },
   settings: {
     react: {
-      version: 'detect'
-    }
+      version: 'detect',
+    },
   },
   plugins: ['@typescript-eslint'],
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'airbnb-typescript'
-  ],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'airbnb-typescript'],
   rules: {
-    '@typescript-eslint/explicit-module-boundary-types': 'off'
-  }
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/indent': 'off',
+
+    'react/destructuring-assignment': 'off',
+    'react/require-default-props': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/jsx-wrap-multilines': 'off',
+
+    'prefer-arrow-callback': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'import/extensions': 'off',
+    'import/prefer-default-export': 'off',
+    'no-param-reassign': 'off',
+  },
 };

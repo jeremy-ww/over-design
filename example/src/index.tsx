@@ -1,4 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from 'src/common/store';
 
-ReactDOM.render(<div>demo</div>, document.querySelector('#root'));
+import HelloWorld from 'src/pages/hello-world';
+
+ReactDOM.render(
+  <Provider store={store}>
+    <HelloWorld />
+  </Provider>,
+  document.querySelector('#root'),
+);
