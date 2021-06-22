@@ -98,10 +98,12 @@ all the devDependencies by themself instead of using `yarn resolutions` for the 
 Put a **webpack-overd.ts** under your project's space, then you revise the webpack config easily.
 
 ```ts
-export default function (config: import('webpack').Configuration) {
+import type { Configuration } from 'webpack';
+
+export default function (config: Configuration) {
   if (config.mode === 'development') {
     config.experiments = {
-      lazyCompilation: false // disable lazyCompilation
+      lazyCompilation: false, // disable lazyCompilation
     };
   }
   console.log(config);

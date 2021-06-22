@@ -1,4 +1,17 @@
-// eslint-disable-next-line func-names
-export default function (config: import('webpack').Configuration) {
-  config.output.publicPath = '/over-design/'
+import type { Configuration, RuleSetRule, RuleSetUseItem } from 'webpack';
+
+export default function overd(config: Configuration) {
+  const jsRuleTest = /\.(js|jsx|mjs|ts|tsx)$/.toString();
+  const jsRule = (config?.module?.rules as RuleSetRule[])?.find(
+    ({ test }) => test?.toString() === jsRuleTest,
+  );
+  if (jsRule?.use) {
+    (jsRule.use as RuleSetUseItem[]).push({
+      loader: '@linaria/webpack-loader',
+      options: { sourceMap: true },
+    });
+  }
+  if (config.output) {
+    config.output.publicPath = '/over-design/';
+  }
 }
