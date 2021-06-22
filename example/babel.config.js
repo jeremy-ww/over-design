@@ -11,12 +11,11 @@ module.exports = {
         corejs: 3,
       },
     ],
-    ['@babel/preset-react', { runtime: 'automatic', importSource: '@emotion/react' }],
+    ['@babel/preset-react', { runtime: 'automatic' }],
     '@babel/preset-typescript',
   ],
   plugins: [
     process.env.NODE_ENV === 'development' && 'react-refresh/babel',
-    ['@emotion'],
     ['@babel/plugin-proposal-private-methods', { loose: true }],
     ['@babel/plugin-proposal-decorators', { legacy: true }],
     ['@babel/plugin-proposal-class-properties', { loose: true }],

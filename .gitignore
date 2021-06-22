@@ -91,3 +91,4 @@ dist/
 build/
 
 **/.DS_Store
+.linaria-cache
