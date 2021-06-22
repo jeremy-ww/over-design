@@ -37,4 +37,5 @@ jobs:
       - uses: preactjs/compressed-size-action@v2
         if: ${{ github.event_name == 'pull_request' }}
         with:
+         build-script: "--help"
          pattern: "./example/dist/**/*.{js,css,html,json}"
