@@ -35,5 +35,6 @@ jobs:
           folder: example/dist # The folder the action should deploy.
 
       - uses: preactjs/compressed-size-action@v2
+        if: ${{ github.event_name == 'pull_request' }}
         with:
          pattern: "./example/dist/**/*.{js,css,html,json}"
