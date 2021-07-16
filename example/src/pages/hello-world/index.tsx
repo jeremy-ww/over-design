@@ -1,6 +1,6 @@
+import { css } from '@linaria/core';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { css } from '@linaria/core';
 import { RootState } from 'src/common/store';
 import { getNewText } from './slice';
 
@@ -9,7 +9,7 @@ export default function HelloWorld() {
   const helloWorld = useSelector((state: RootState) => state.helloWorld);
   useEffect(() => {
     dispatch(getNewText());
-  }, []);
+  }, [dispatch]);
   return (
     <p
       className={css`
