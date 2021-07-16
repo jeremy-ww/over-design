@@ -8,13 +8,10 @@ module.exports = {
     'src/styles/',
     '**/*.d.ts',
     '**/*.less',
-    'src/features/activity-planning/create-edit/model/',
-    'src/features/activity-planning/create-edit/redux/',
-    'src/features/activity-planning/list-view/models/',
   ],
   include: ['src'],
   /**
    * @see https://github.com/cypress-io/code-coverage/issues/216#issuecomment-635952099
    */
-  reporter: process.env.CI ? ['html', 'lcov'] : ['text', 'html'],
+  reporter: process.env.CI ? ['html', 'lcov'] : ['text'],
 };
