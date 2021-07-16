@@ -15,7 +15,6 @@ module.exports = {
     '@babel/preset-typescript',
   ],
   plugins: [
-    process.env.NODE_ENV === 'development' && 'react-refresh/babel',
     ['@babel/plugin-proposal-private-methods', { loose: true }],
     ['@babel/plugin-proposal-decorators', { legacy: true }],
     ['@babel/plugin-proposal-class-properties', { loose: true }],
@@ -31,6 +30,9 @@ module.exports = {
     ],
   ].filter(Boolean),
   env: {
+    development: {
+      plugins: ['react-refresh/babel'],
+    },
     test: {
       plugins: [
         [
