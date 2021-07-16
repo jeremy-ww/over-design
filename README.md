@@ -39,7 +39,7 @@ $ yarn add overd -D
 
 #### Override default config
 
-Put a **webpack-overd.ts** under your project's space, then you revise the webpack config easily.
+Put a **webpack-overd.ts** under your project's workspace, then you can revise the webpack config easily with the help of automatic reload.
 
 ```ts
 import type { Configuration } from 'webpack';
