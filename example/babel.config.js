@@ -25,7 +25,7 @@ module.exports = {
         alias: {
           cypress: './cypress',
           src: './src',
-          misc: './misc',
+          misc: './cypress/misc',
         },
       },
     ],
