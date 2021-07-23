@@ -2,23 +2,26 @@ import { css } from '@linaria/core';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from 'src/common/store';
-import { getNewText } from './slice';
+import { getRequest } from './slice';
 
 export default function HelloWorld() {
   const dispatch = useAppDispatch();
   const helloWorld = useSelector((state: RootState) => state.helloWorld);
   useEffect(() => {
-    dispatch(getNewText());
+    dispatch(getRequest());
   }, [dispatch]);
   return (
-    <p
+    <pre
       className={css`
-        margin-top: 25%;
-        text-align: center;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 18px;
       `}
     >
-      {helloWorld.loading ? 'Loading...' : helloWorld.text}
-    </p>
+      <code>{helloWorld.loading ? 'Loading...' : JSON.stringify(helloWorld.json, null, '  ')}</code>
+    </pre>
   );
 }

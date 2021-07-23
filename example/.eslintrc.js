@@ -30,6 +30,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/indent': 'off',
+    '@typescript-eslint/no-use-before-define': 'off',
 
     'react/destructuring-assignment': 'off',
     'react/require-default-props': 'off',
@@ -42,5 +43,6 @@ module.exports = {
     'import/extensions': 'off',
     'import/prefer-default-export': 'off',
     'no-param-reassign': 'off',
+    'implicit-arrow-linebreak': 'off',
   },
 };
