@@ -1,5 +1,4 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import store from 'src/common/store';
 
 export interface SliceState {
@@ -8,7 +7,7 @@ export interface SliceState {
 }
 
 export const getNewText = createAsyncThunk<
-  void,
+  string,
   void,
   {
     state: ReturnType<typeof store.getState>;
@@ -18,6 +17,7 @@ export const getNewText = createAsyncThunk<
   await { then: (r) => setTimeout(r, 1000) };
   // eslint-disable-next-line @typescript-eslint/no-use-before-define
   dispatch(setText(`Random: ${Math.random()}`));
+  return '2';
 });
 
 export const slice = createSlice({

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable global-require */
 import { configureStore, Middleware } from '@reduxjs/toolkit';
-
+import { useDispatch } from 'react-redux';
 import helloWorldSlice from 'src/pages/hello-world/slice';
 
 const middlewares: Middleware[] = [];
@@ -26,4 +26,4 @@ export default store;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
-export const useAppDispatch = () => useDispatch<AppDispatch>()
+export const useAppDispatch = () => useDispatch<AppDispatch>();
