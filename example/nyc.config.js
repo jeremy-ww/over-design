@@ -13,5 +13,5 @@ module.exports = {
   /**
    * @see https://github.com/cypress-io/code-coverage/issues/216#issuecomment-635952099
    */
-  reporter: process.env.CI ? ['html', 'lcov'] : ['text'],
+  reporter: process.env.CI ? ['html', 'lcov'] : ['html', 'text'],
 };
