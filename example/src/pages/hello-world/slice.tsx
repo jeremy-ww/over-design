@@ -1,23 +1,63 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import store from 'src/common/store';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { BaseQueryFn, createApi } from '@reduxjs/toolkit/query/react';
+import axios, { AxiosError, AxiosRequestConfig } from 'axios';
+
+// https://redux-toolkit.js.org/rtk-query/usage/customizing-queries#axios-basequery
+const axiosBaseQuery =
+  (
+    { baseUrl }: { baseUrl: string } = { baseUrl: '' },
+  ): BaseQueryFn<
+    {
+      url: string;
+      method?: AxiosRequestConfig['method'];
+      data?: AxiosRequestConfig['data'];
+      __disableNotification?: boolean;
+    },
+    unknown,
+    unknown
+  > =>
+  async ({ url, method, data, __disableNotification }) => {
+    try {
+      const result = await axios({ url: baseUrl + url, method, data });
+      return { data: result.data };
+    } catch (axiosError) {
+      const error = axiosError as AxiosError;
+      if (__disableNotification) {
+        alert(error.response?.data?.message ?? 'Operation failed.');
+      }
+
+      return {
+        error: { status: error.response?.status, data: error.response?.data },
+      };
+    }
+  };
+
+export const helloWorldAPI = createApi({
+  reducerPath: 'helloWorldAPI',
+  baseQuery: axiosBaseQuery({
+    baseUrl: 'https://httpstat.us',
+  }),
+  endpoints: (build) => ({
+    getASuccessAPI: build.query<{ code: number; description: string }, void>({
+      query: () => ({
+        url: '/200',
+      }),
+    }),
+    getAFailedAPI: build.query<
+      { code: number; description: string },
+      { __disableNotification?: boolean }
+    >({
+      query: () => ({
+        url: '/400',
+      }),
+    }),
+  }),
+});
 
 export interface SliceState {
   json: Record<string, any>;
   loading: boolean;
 }
-
-export const getRequest = createAsyncThunk<
-  void,
-  void,
-  {
-    state: ReturnType<typeof store.getState>;
-  }
->('getRequest', async (template, { dispatch }) => {
-  const request = await fetch('https://jsonplaceholder.typicode.com/todos/1').then((res) =>
-    res.json(),
-  );
-  dispatch(setJSON(request));
-});
 
 export const slice = createSlice({
   name: 'helloWorld',
@@ -30,18 +70,7 @@ export const slice = createSlice({
       state.json = action.payload;
     },
   },
-  extraReducers: (builder) => {
-    builder
-      .addCase(getRequest.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(getRequest.fulfilled, (state) => {
-        state.loading = false;
-      })
-      .addCase(getRequest.rejected, (state) => {
-        state.loading = false;
-      });
-  },
+  extraReducers: () => {},
 });
 
 export const { setJSON } = slice.actions;

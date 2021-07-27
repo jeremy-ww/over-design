@@ -4,8 +4,13 @@ import HelloWorld from 'src/pages/hello-world';
 
 describe('HelloWorld', () => {
   before(() => {
-    cy.intercept('GET', 'https://jsonplaceholder.typicode.com/todos/1', {
-      fixture: 'todos.json',
+    cy.intercept('GET', 'https://httpstat.us/200', {
+      body: 'OK',
+    });
+
+    cy.intercept('GET', 'https://httpstat.us/400', {
+      status: 400,
+      body: 'Error',
     });
   });
 

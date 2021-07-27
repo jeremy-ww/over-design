@@ -1,27 +1,37 @@
 import { css } from '@linaria/core';
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { RootState, useAppDispatch } from 'src/common/store';
-import { getRequest } from './slice';
+import { helloWorldAPI } from './slice';
+
+interface RequestError {
+  error: { status: number; data: { description: string } };
+}
 
 export default function HelloWorld() {
-  const dispatch = useAppDispatch();
-  const helloWorld = useSelector((state: RootState) => state.helloWorld);
-  useEffect(() => {
-    dispatch(getRequest());
-  }, [dispatch]);
+  const { data, isLoading: useGetASuccessAPIQueryLoading } = helloWorldAPI.useGetASuccessAPIQuery();
+  const { error: failedError, isLoading: useGetAFailedAPIQueryLoading } =
+    helloWorldAPI.useGetAFailedAPIQuery<RequestError & { isLoading: boolean }>({
+      __disableNotification: true,
+    });
+
   return (
-    <pre
+    <div
       className={css`
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         font-size: 18px;
       `}
     >
-      <code>{helloWorld.loading ? 'Loading...' : JSON.stringify(helloWorld.json, null, '  ')}</code>
-    </pre>
+      <p>
+        useGetASuccessAPIQuery: {useGetASuccessAPIQueryLoading ? 'Loading...' : data?.description}
+      </p>
+
+      <p>
+        useGetAFailedAPIQuery:{' '}
+        {useGetAFailedAPIQueryLoading ? 'Loading...' : failedError?.data?.description}
+      </p>
+    </div>
   );
 }
