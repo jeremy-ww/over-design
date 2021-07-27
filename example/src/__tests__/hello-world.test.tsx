@@ -3,7 +3,13 @@ import React from 'react';
 import HelloWorld from 'src/pages/hello-world';
 
 describe('HelloWorld', () => {
-  it('render no error', () => {
+  before(() => {
+    cy.intercept('GET', 'https://jsonplaceholder.typicode.com/todos/1', {
+      fixture: 'todos.json',
+    });
+  });
+
+  it.only('render no error', () => {
     mount(<HelloWorld />);
   });
 });
