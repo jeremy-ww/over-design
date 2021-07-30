@@ -1,16 +1,14 @@
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
-import TerserPlugin from 'terser-webpack-plugin';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { GenerateSW } from 'workbox-webpack-plugin';
-import { merge } from 'webpack-merge';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 import webpack from 'webpack';
-
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import { merge } from 'webpack-merge';
+import { GenerateSW } from 'workbox-webpack-plugin';
+import { dotEnv } from './utils/load-config';
 import reviseWebpack from './utils/revise-webpack';
 import base from './webpack.base';
-
-const report = process.env.WEBPACK_REPORT;
 
 const config: webpack.Configuration = {
   mode: 'production',
@@ -125,7 +123,7 @@ const config: webpack.Configuration = {
         minifyURLs: true,
       },
     }),
-    report && new BundleAnalyzerPlugin(),
+    dotEnv.REPORT && new BundleAnalyzerPlugin(),
     false &&
       new GenerateSW({
         inlineWorkboxRuntime: true,

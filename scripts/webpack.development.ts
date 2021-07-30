@@ -1,16 +1,16 @@
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
-import { prepareUrls } from 'react-dev-utils/WebpackDevServerUtils';
-import { requireFromProjectCWD, pathResolve } from './utils/path-resolve';
-import clearConsole from 'react-dev-utils/clearConsole';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { GenerateSW } from 'workbox-webpack-plugin';
-import { merge } from 'webpack-merge';
-import webpack from 'webpack';
 import chalk from 'chalk';
-
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import clearConsole from 'react-dev-utils/clearConsole';
+import { prepareUrls } from 'react-dev-utils/WebpackDevServerUtils';
+import webpack from 'webpack';
+import type devServer from 'webpack-dev-server';
+import { merge } from 'webpack-merge';
+import { GenerateSW } from 'workbox-webpack-plugin';
+import { dotEnv } from './utils/load-config';
+import { requireFromProjectCWD } from './utils/path-resolve';
 // just in case you run into any typescript error when configuring `devServer`
 import reviseWebpack from './utils/revise-webpack';
-import type devServer from 'webpack-dev-server';
 import base from './webpack.base';
 
 const HotModuleReplacementPlugin = webpack.HotModuleReplacementPlugin;
@@ -41,9 +41,6 @@ class ClearWebpackDevServerMessagePlugin {
   }
 }
 
-// e.g, 2105
-const PORT = Number(process.env.PORT);
-
 const config: webpack.Configuration & { devServer: devServer.Configuration } = {
   mode: 'development',
   devtool: 'eval-source-map',
@@ -66,7 +63,7 @@ const config: webpack.Configuration & { devServer: devServer.Configuration } = {
   },
   devServer: {
     hot: true,
-    port: PORT,
+    port: dotEnv.PORT,
     compress: true,
     disableHostCheck: true,
     transportMode: 'ws',

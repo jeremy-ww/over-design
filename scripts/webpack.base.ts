@@ -1,19 +1,18 @@
-import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
-import DuplicatePackageCheckerPlugin from 'duplicate-package-checker-webpack-plugin';
-import { requireFromProjectCWD, pathResolve } from './utils/path-resolve';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import Dotenv from 'dotenv-webpack';
-import webpack from 'webpack';
 import dotenv from 'dotenv';
-
-dotenv.config();
+import Dotenv from 'dotenv-webpack';
+import DuplicatePackageCheckerPlugin from 'duplicate-package-checker-webpack-plugin';
+import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
+import webpack from 'webpack';
+import { dotEnv, dotEnvPath } from './utils/load-config';
+import { pathResolve, requireFromProjectCWD } from './utils/path-resolve';
 
 const config: webpack.Configuration = {
   entry: './src/index',
   output: {
     path: pathResolve('./dist'),
     filename: 'assets/js/[name].js',
-    publicPath: '/',
+    publicPath: dotEnv.PUBLIC_PATH,
     crossOriginLoading: 'anonymous',
     // NOTE: for non-initial chunk
     chunkFilename: 'assets/js/[name].chunk.js',
@@ -83,7 +82,9 @@ const config: webpack.Configuration = {
         return ['webpack', 'querystring'].includes(instance.name);
       },
     }),
-    new Dotenv(),
+    new Dotenv({
+      path: dotEnvPath,
+    }),
     // @ts-ignore
     new ScriptExtHtmlWebpackPlugin({
       custom: {
