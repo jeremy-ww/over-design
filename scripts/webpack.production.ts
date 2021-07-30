@@ -99,7 +99,7 @@ const config: webpack.Configuration = {
         },
         parallel: true,
         extractComments: false,
-      }) as any,
+      }),
       new CssMinimizerPlugin(),
     ],
   },
@@ -107,7 +107,7 @@ const config: webpack.Configuration = {
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name].[contenthash:8].css',
       chunkFilename: 'assets/css/[name].[contenthash:8].chunk.css',
-    }) as any,
+    }),
     new HtmlWebpackPlugin({
       template: './static/index.html',
       minify: {

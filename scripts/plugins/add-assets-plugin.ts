@@ -1,6 +1,7 @@
+// @ts-nocheck
+import cheerio from 'cheerio';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
-import cheerio from 'cheerio';
 
 const PLUGIN_NAME = 'AlterAssetsPlugin';
 

@@ -1,5 +1,4 @@
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import dotenv from 'dotenv';
 import Dotenv from 'dotenv-webpack';
 import DuplicatePackageCheckerPlugin from 'duplicate-package-checker-webpack-plugin';
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
@@ -7,7 +6,7 @@ import webpack from 'webpack';
 import { dotEnv, dotEnvPath } from './utils/load-config';
 import { pathResolve, requireFromProjectCWD } from './utils/path-resolve';
 
-const config: webpack.Configuration = {
+const config = {
   entry: './src/index',
   output: {
     path: pathResolve('./dist'),
@@ -59,7 +58,15 @@ const config: webpack.Configuration = {
       },
     ],
   },
+  // @ts-ignore
   plugins: [
+    // @ts-ignore
+    new webpack.EnvironmentPlugin({
+      // it seems that cypress-webpack will do this for us
+      // NODE_ENV: 'test',
+      APP_NAME: requireFromProjectCWD('./package.json').name,
+    }),
+    // @ts-ignore
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -71,19 +78,11 @@ const config: webpack.Configuration = {
         },
       ],
     }),
-    new webpack.EnvironmentPlugin({
-      // it seems that cypress-webpack will do this for us
-      // NODE_ENV: 'test',
-      APP_NAME: requireFromProjectCWD('./package.json').name,
-    }),
     // @ts-ignore
     new DuplicatePackageCheckerPlugin({
       exclude(instance: { name: string }) {
         return ['webpack', 'querystring'].includes(instance.name);
       },
-    }),
-    new Dotenv({
-      path: dotEnvPath,
     }),
     // @ts-ignore
     new ScriptExtHtmlWebpackPlugin({
@@ -93,7 +92,11 @@ const config: webpack.Configuration = {
         value: 'anonymous',
       },
     }),
+    // @ts-ignore
+    new Dotenv({
+      path: dotEnvPath,
+    }),
   ],
-};
+} as webpack.Configuration;
 
 export default config;

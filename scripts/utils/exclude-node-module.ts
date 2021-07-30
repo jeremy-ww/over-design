@@ -9,7 +9,7 @@ export default function excludeNodeModulesForAllOS(modules: string[]) {
     return new RegExp('node_modules' + pathSep + modName);
   });
 
-  return function (modulePath) {
+  return function (modulePath: string) {
     if (/node_modules/.test(modulePath)) {
       for (let i = 0; i < moduleRegExps.length; i++)
         if (moduleRegExps[i].test(modulePath)) {
