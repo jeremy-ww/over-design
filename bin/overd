@@ -8,11 +8,11 @@ const cwd = (str) => path.resolve('node_modules/overd/', str);
 
 function serve() {
   nodemon({
-    watch: [cwd('scripts'), './webpack-overd.ts'],
+    watch: [cwd('scripts'), './webpack-overd.ts', './babel.config.js'],
     ext: 'ts',
     exec: `NODE_ENV=development TS_NODE_PROJECT=${cwd(
-      'tsconfig-for-webpack-config.json'
-    )} webpack serve --progress --config  ${cwd('scripts/webpack.development.ts')}`
+      'tsconfig-for-webpack-config.json',
+    )} webpack serve --progress --config  ${cwd('scripts/webpack.development.ts')}`,
   });
 
   nodemon
@@ -28,11 +28,11 @@ function serve() {
 function build() {
   execSync(
     `NODE_ENV=production TS_NODE_PROJECT=${cwd(
-      'tsconfig-for-webpack-config.json'
+      'tsconfig-for-webpack-config.json',
     )} webpack --progress --config ${cwd('scripts/webpack.production.ts')}`,
     {
-      stdio: 'inherit'
-    }
+      stdio: 'inherit',
+    },
   );
 }
 
