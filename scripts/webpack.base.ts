@@ -32,16 +32,8 @@ const config = {
         test: /\.(js|jsx|mjs|ts|tsx)$/,
         exclude: /node_modules/,
         use: [
+          // We can't use esbuild-loader cuz its cannot integrate with React-Refresh.
           'thread-loader',
-          // TODO: I don't know how to integrate esbuild with hot reload.
-          // {
-          //   use: "esbuild-loader",
-          //   options: {
-          //     loader: "tsx",
-          //     target: "es2015",
-          //     tsconfigRaw: require("../tsconfig.json"),
-          //   },
-          // },
           {
             loader: 'babel-loader',
             options: {},
