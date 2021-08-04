@@ -40,15 +40,15 @@ const config: webpack.Configuration = {
       cacheGroups: {
         vendors: {
           name: 'vendors',
-          test: /node_modules/,
+          test: /[\\/]node_modules[\\/]/,
           priority: 10,
-          chunks: 'initial',
+          chunks: 'all',
           enforce: true,
         },
         common: {
           name: 'common',
           minChunks: 2,
-          chunks: 'initial',
+          chunks: 'all',
           reuseExistingChunk: true,
         },
       },
