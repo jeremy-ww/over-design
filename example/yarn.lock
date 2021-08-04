@@ -7717,10 +7717,10 @@ outpipe@^1.1.0:
   dependencies:
     shell-quote "^1.4.2"
 
-overd@1.0.7:
-  version "1.0.7"
-  resolved "https://registry.npmjs.org/overd/-/overd-1.0.7.tgz#10cb6f66ddb18546516d42b0119d37c2e7ccfd6f"
-  integrity sha512-tm/Z9WSUtwhjFMgmuySlZbDoaht+6Dr+zzMA1duNk4jnNV/PxWmWvAAAH62kdxu5O0OSJNuqbAeekXyiLAvgZg==
+overd@1.0.8:
+  version "1.0.8"
+  resolved "https://registry.npmjs.org/overd/-/overd-1.0.8.tgz#2ca37f7b5f4f90a7d5ecf6379b3d63e8413551a6"
+  integrity sha512-IonpL0GltUt2Iwt9K7/+r6/C0ScjZL3yfeoeoz1q49N4HCnPRNY1k1FatrAKtIhFPqghR4RA8PLnreIMu7P3FQ==
   dependencies:
     "@intervolga/optimize-cssnano-plugin" "1.0.6"
     "@pmmmwh/react-refresh-webpack-plugin" "0.4.3"

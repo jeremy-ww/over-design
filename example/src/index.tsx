@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from 'src/common/store';
 
-import HelloWorld from 'src/pages/hello-world';
+const HelloWorld = React.lazy(() => import('src/pages/hello-world'));
 
 ReactDOM.render(
   <Provider store={store}>
-    <HelloWorld />
+    <React.Suspense fallback="Loading...">
+      <HelloWorld />
+    </React.Suspense>
   </Provider>,
   document.querySelector('#root'),
 );
