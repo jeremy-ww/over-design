@@ -2,6 +2,7 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/overd"><img src="https://flat.badgen.net/npm/v/overd" alt="Version" /></a>
+  <a href="https://packagephobia.com/result?p=overd"><img src="https://flat.badgen.net/packagephobia/install/overd" alt="Dependencies" /></a>
 </p>
 
 <img src="./docs/screenshot.png" />
