@@ -13,8 +13,11 @@ A configurable building tools based on webpack@5.
 ### Quick Start
 
 ```bash
-# install overd it's self.
 $ yarn add overd -D
+```
+
+```
+$ prepare your own babel.config.js
 ```
 
 ### What's the difference between create-react-app?
