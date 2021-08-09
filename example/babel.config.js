@@ -8,6 +8,7 @@ module.exports = {
          * @see https://github.com/cypress-io/cypress/tree/develop/npm/react/cypress/component/advanced/mocking-imports
          */
         useBuiltIns: 'usage',
+        modules: false,
         corejs: 3,
       },
     ],
