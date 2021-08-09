@@ -1,5 +1,6 @@
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import webpack from 'webpack';
@@ -124,6 +125,7 @@ const config: webpack.Configuration = {
       },
     }),
     dotEnv.REPORT && new BundleAnalyzerPlugin(),
+    new LodashModuleReplacementPlugin(),
     false &&
       new GenerateSW({
         inlineWorkboxRuntime: true,
