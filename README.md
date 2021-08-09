@@ -58,6 +58,20 @@ export default function (config: Configuration) {
 }
 ```
 
+#### Dotenv configuration
+
+Dotenv configuration is a more cheap way to revise common webpack configuration than by **webpack-overd.ts** files, you can use below fields.
+
+| Key         | Default Value | Description                           |
+| ----------- | ------------- | ------------------------------------- |
+| PUBLIC_PATH | /             | publicPath for webpack.               |
+| PORT        | 3000          | port for webpack dev server           |
+| REPORT      | false         | enable webpack-bundle-analyzer plugin |
+
+#### Clear webpack cache
+
+By default, we used webpack persistent cache to improve the building performance. If you find that your modification is not working, you can try to use `rm -rf node_modules/.cache` command and restart the server to remove stale cache.
+
 ### License
 
 [MIT](https://opensource.org/licenses/MIT)
