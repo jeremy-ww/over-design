@@ -1,4 +1,5 @@
 import { css } from '@linaria/core';
+import { Chip } from '@material-ui/core';
 import { helloWorldAPI } from './slice';
 
 interface RequestError {
@@ -15,7 +16,6 @@ export default function HelloWorld() {
   return (
     <div
       className={css`
-        width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
@@ -24,14 +24,26 @@ export default function HelloWorld() {
         font-size: 18px;
       `}
     >
-      <p>
-        useGetASuccessAPIQuery: {useGetASuccessAPIQueryLoading ? 'Loading...' : data?.description}
-      </p>
+      <Chip
+        className={css`
+          margin-bottom: 20px;
+        `}
+        label={
+          <>
+            useGetASuccessAPIQuery:{' '}
+            {useGetASuccessAPIQueryLoading ? 'Loading...' : data?.description}
+          </>
+        }
+      ></Chip>
 
-      <p>
-        useGetAFailedAPIQuery:{' '}
-        {useGetAFailedAPIQueryLoading ? 'Loading...' : failedError?.data?.description}
-      </p>
+      <Chip
+        label={
+          <>
+            useGetAFailedAPIQuery:{' '}
+            {useGetAFailedAPIQueryLoading ? 'Loading...' : failedError?.data?.description}
+          </>
+        }
+      ></Chip>
     </div>
   );
 }
