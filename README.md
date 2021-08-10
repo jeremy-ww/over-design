@@ -3,6 +3,7 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/overd"><img src="https://flat.badgen.net/npm/v/overd" alt="Version" /></a>
   <a href="https://packagephobia.com/result?p=overd"><img src="https://flat.badgen.net/packagephobia/install/overd" alt="Dependencies" /></a>
+  <a href="https://david-dm.org/army-u/over-design"><img src="https://flat.badgen.net/david/dev/army-u/over-design" alt="Dependencies" /></a>
 </p>
 
 <img src="./docs/screenshot.png" />
