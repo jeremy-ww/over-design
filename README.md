@@ -10,7 +10,7 @@
 
 ### Introduction
 
-A configurable building tools based on webpack@5.
+A configurable building tool that based on webpack@5.
 
 ### Quick Start
 
@@ -44,7 +44,7 @@ $ prepare your own babel.config.js
 
 #### Override default config
 
-Put a **webpack-overd.ts** under your project's workspace, then you can revise the webpack config easily with the help of automatic reload.
+Put a **webpack-overd.ts** under your project's workspace, and then you can revise the webpack config easily with the help of automatic reload.
 
 ```ts
 import type { Configuration } from 'webpack';
@@ -61,7 +61,7 @@ export default function (config: Configuration) {
 
 #### Dotenv configuration
 
-Dotenv configuration is a more cheap way to revise common webpack configuration than by **webpack-overd.ts** files, you can use below fields.
+Dotenv configuration is a more cheap way to revise common webpack configuration than by **webpack-overd.ts** files, and you can use the below fields.
 
 | Key         | Default Value | Description                           |
 | ----------- | ------------- | ------------------------------------- |
@@ -71,7 +71,7 @@ Dotenv configuration is a more cheap way to revise common webpack configuration 
 
 #### Clear webpack cache
 
-By default, we used webpack persistent cache to improve the building performance. If you find that your modification is not working, you can try to use `rm -rf node_modules/.cache` command and restart the server to remove stale cache.
+By default, we used webpack persistent cache to improve the building performance. If you find that your modification is not working, you can try to use `rm -rf node_modules/.cache` command and restart the server to remove the stale cache.
 
 ### License
 
