@@ -15,6 +15,7 @@ const config = {
     crossOriginLoading: 'anonymous',
     // NOTE: for non-initial chunk
     chunkFilename: 'assets/js/[name].chunk.js',
+    uniqueName: dotEnv.UNIQUE_NAME
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js'],

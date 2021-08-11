@@ -91,6 +91,7 @@ const config: webpack.Configuration & { devServer: devServer.Configuration } = {
     new HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin({
       overlay: false,
+      library: dotEnv.UNIQUE_NAME + 'ReactRefresh'
     }),
     false && new GenerateSW(),
   ].filter((v): v is webpack.WebpackPluginInstance => Boolean(v)),

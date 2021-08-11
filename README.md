@@ -63,11 +63,12 @@ export default function (config: Configuration) {
 
 Dotenv configuration is a more cheap way to revise common webpack configuration than by **webpack-overd.ts** files, and you can use the below fields.
 
-| Key         | Default Value | Description                           |
-| ----------- | ------------- | ------------------------------------- |
-| PUBLIC_PATH | /             | publicPath for webpack.               |
-| PORT        | 3000          | port for webpack dev server           |
-| REPORT      | false         | enable webpack-bundle-analyzer plugin |
+| Key         | Default Value | Description                                                                                                                                                                                                           |
+| ----------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PUBLIC_PATH | /             | publicPath for webpack.                                                                                                                                                                                               |
+| PORT        | 3000          | port for webpack dev server                                                                                                                                                                                           |
+| REPORT      | false         | enable webpack-bundle-analyzer plugin                                                                                                                                                                                 |
+| UNIQUE_NAME | undefined     | same as webpack out uniqueName, and it's used for [ReactRefresh](https://github.com/pmmmwh/react-refresh-webpack-plugin/blob/main/docs/TROUBLESHOOTING.md#running-multiple-instances-of-react-refresh-simultaneously) |
 
 #### Clear webpack cache
 

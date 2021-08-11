@@ -14,4 +14,6 @@ export const dotEnv = {
   PUBLIC_PATH: process.env.PUBLIC_PATH || '/',
   PORT: process.env.PORT ? Number(process.env.PORT) : 3000,
   REPORT: Boolean(process.env.REPORT),
+  // https://github.com/pmmmwh/react-refresh-webpack-plugin/blob/main/docs/TROUBLESHOOTING.md#running-multiple-instances-of-react-refresh-simultaneously
+  UNIQUE_NAME: process.env.UNIQUE_NAME
 } as const;
