@@ -1,6 +1,5 @@
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import webpack from 'webpack';
@@ -100,15 +99,15 @@ const config: webpack.Configuration = {
         },
         parallel: true,
         extractComments: false,
-      }),
-      new CssMinimizerPlugin(),
+      }) as unknown as webpack.WebpackPluginInstance,
+      new CssMinimizerPlugin() as unknown as webpack.WebpackPluginInstance,
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name].[contenthash:8].css',
       chunkFilename: 'assets/css/[name].[contenthash:8].chunk.css',
-    }),
+    }) as unknown as webpack.WebpackPluginInstance,
     new HtmlWebpackPlugin({
       template: './static/index.html',
       minify: {
@@ -123,9 +122,8 @@ const config: webpack.Configuration = {
         minifyCSS: true,
         minifyURLs: true,
       },
-    }),
-    dotEnv.REPORT && new BundleAnalyzerPlugin(),
-    new LodashModuleReplacementPlugin(),
+    }) as unknown as webpack.WebpackPluginInstance,
+    dotEnv.REPORT && (new BundleAnalyzerPlugin() as unknown as webpack.WebpackPluginInstance),
     false &&
       new GenerateSW({
         inlineWorkboxRuntime: true,
