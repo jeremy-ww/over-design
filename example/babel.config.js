@@ -29,7 +29,6 @@ module.exports = {
         },
       },
     ],
-    ['lodash'],
   ].filter(Boolean),
   env: {
     development: {
