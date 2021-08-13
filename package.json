@@ -65,5 +65,7 @@
   "engines": {
     "node": ">=12"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "dotenv-defaults": "2.0.2"
+  }
 }
