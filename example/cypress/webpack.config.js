@@ -41,6 +41,8 @@ const config = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
+      // https://docs.cypress.io/guides/references/changelog#7-6-0
+      // https://github.com/cypress-io/cypress/issues/15447
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
         type: 'asset/resource',

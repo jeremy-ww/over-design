@@ -10,7 +10,7 @@
     "lint:fix": "yarn lint --fix",
     "c": "cypress open-ct -h",
     "test": "NODE_ENV=test cypress open-ct -b chrome",
-    "test:ci": "NODE_ENV=test cypress run-ct -b chrome --headless"
+    "test:ci": "NODE_ENV=test cypress run-ct -b chrome"
   },
   "browserslist": {
     "test": [
