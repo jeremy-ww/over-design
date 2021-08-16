@@ -1,5 +1,6 @@
 import { css } from '@linaria/core';
 import { Chip } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 import { helloWorldAPI } from './slice';
 
 interface RequestError {
@@ -12,6 +13,7 @@ export default function HelloWorld() {
     helloWorldAPI.useGetAFailedAPIQuery<RequestError & { isLoading: boolean }>({
       __disableNotification: true,
     });
+  const history = useHistory();
 
   return (
     <div
@@ -22,12 +24,13 @@ export default function HelloWorld() {
         align-items: center;
         flex-direction: column;
         font-size: 18px;
+
+        div {
+          margin-bottom: 20px;
+        }
       `}
     >
       <Chip
-        className={css`
-          margin-bottom: 20px;
-        `}
         label={
           <>
             useGetASuccessAPIQuery:{' '}
@@ -44,6 +47,14 @@ export default function HelloWorld() {
           </>
         }
       ></Chip>
+
+      <Chip
+        onClick={() => {
+          history.push('/');
+        }}
+        clickable
+        label={<>useHistory</>}
+      />
     </div>
   );
 }

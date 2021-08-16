@@ -24,9 +24,12 @@ const config = {
         test: /\.(js|jsx|mjs|ts|tsx)$/,
         exclude: excludeNodeModulesForAllOS(['react-redux', 'react-router-dom']),
         use: [
+          'thread-loader',
           {
             loader: 'babel-loader',
-            options: {},
+            options: {
+              cacheDirectory: true,
+            },
           },
           {
             loader: '@linaria/webpack-loader',
@@ -59,7 +62,6 @@ const config = {
       // it seems that cypress-webpack NODE_ENV: 'test' will do this for us.
       // but we need it to be development temporarily for @eureka/ui-components.
       // NODE_ENV: 'development',
-      REACT_APP_NAME: require('../package.json').name,
     }),
     new Dotenv(),
   ],
