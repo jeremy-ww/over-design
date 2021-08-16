@@ -7,12 +7,14 @@ import store from 'src/common/store';
 const HelloWorld = React.lazy(() => import('src/pages/hello-world'));
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router>
-      <React.Suspense fallback="Loading...">
-        <HelloWorld />
-      </React.Suspense>
-    </Router>
-  </Provider>,
+  <React.StrictMode>
+    <Provider store={store}>
+      <Router>
+        <React.Suspense fallback="Loading...">
+          <HelloWorld />
+        </React.Suspense>
+      </Router>
+    </Provider>
+  </React.StrictMode>,
   document.querySelector('#root'),
 );

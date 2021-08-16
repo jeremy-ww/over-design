@@ -50,7 +50,9 @@ export default function HelloWorld() {
 
       <Chip
         onClick={() => {
-          history.push('/');
+          const searchString = new URLSearchParams();
+          searchString.append('s', Math.random().toString());
+          history.push(location.pathname + '?' + searchString.toString());
         }}
         clickable
         label={<>useHistory</>}
