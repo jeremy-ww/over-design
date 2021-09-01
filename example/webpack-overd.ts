@@ -1,3 +1,4 @@
+import path from 'path';
 import type { Configuration, RuleSetRule, RuleSetUseItem } from 'webpack';
 
 export default function overd(config: Configuration) {
@@ -6,12 +7,24 @@ export default function overd(config: Configuration) {
     ({ test }) => test?.toString() === jsRuleTest,
   );
   if (jsRule?.use) {
-    (jsRule.use as RuleSetUseItem[]).push({
-      loader: '@linaria/webpack-loader',
-      options: { sourceMap: true },
-    });
+    jsRule.use = [
+      {
+        loader: 'swc-loader',
+      },
+      {
+        loader: '@linaria/webpack-loader',
+        options: { sourceMap: true },
+      },
+    ];
   }
   if (config.output) {
     config.output.publicPath = '/over-design/';
+  }
+
+  if (config.resolve) {
+    config.resolve.alias = {
+      src: path.resolve(__dirname, 'src'),
+      misc: path.resolve(__dirname, 'cypress/misc/'),
+    };
   }
 }
