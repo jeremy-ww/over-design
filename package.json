@@ -66,6 +66,7 @@
     "node": ">=12"
   },
   "devDependencies": {
+    "cross-env": "7.0.3",
     "dotenv-defaults": "2.0.2"
   }
 }
