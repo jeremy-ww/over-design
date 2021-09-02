@@ -5,7 +5,7 @@ const nodemon = require('nodemon');
 const path = require('path');
 
 const cwd = (str, escape) => {
-  const fullPath = path.resolve('node_modules/@eureka/ui-utils/', str);
+  const fullPath = path.resolve('node_modules/overd/', str);
   return escape ? fullPath.replace(/(\s+)/g, '\\ ') : fullPath;
 };
 
