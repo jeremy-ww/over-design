@@ -1,6 +1,6 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import XHR from 'i18next-xhr-backend';
+import HttpApi from 'i18next-http-backend';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { initReactI18next } from 'react-i18next';
@@ -11,7 +11,7 @@ import store from 'src/common/store';
 i18n
   .use(initReactI18next)
   .use(LanguageDetector)
-  .use(XHR)
+  .use(HttpApi)
   .init({
     debug: true,
     lng: 'en',
