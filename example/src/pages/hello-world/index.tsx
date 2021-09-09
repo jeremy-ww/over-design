@@ -1,5 +1,6 @@
 import { css } from '@linaria/core';
 import { Chip } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { helloWorldAPI } from './slice';
 
@@ -14,6 +15,7 @@ export default function HelloWorld() {
       __disableNotification: true,
     });
   const history = useHistory();
+  const { t } = useTranslation();
 
   return (
     <div
@@ -33,8 +35,8 @@ export default function HelloWorld() {
       <Chip
         label={
           <>
-            useGetASuccessAPIQuery:{' '}
-            {useGetASuccessAPIQueryLoading ? 'Loading...' : data?.description}
+            {t('useGetASuccessAPIQuery')}:{' '}
+            {useGetASuccessAPIQueryLoading ? t('Loading') + '...' : data?.description}
           </>
         }
       ></Chip>
@@ -42,8 +44,8 @@ export default function HelloWorld() {
       <Chip
         label={
           <>
-            useGetAFailedAPIQuery:{' '}
-            {useGetAFailedAPIQueryLoading ? 'Loading...' : failedError?.data?.description}
+            {t('useGetAFailedAPIQuery')}
+            {useGetAFailedAPIQueryLoading ? t('Loading') + '...' : failedError?.data?.description}
           </>
         }
       ></Chip>
@@ -55,7 +57,7 @@ export default function HelloWorld() {
           history.push(location.pathname + '?' + searchString.toString());
         }}
         clickable
-        label={<>useHistory</>}
+        label={<>{t('useHistory')}</>}
       />
     </div>
   );
