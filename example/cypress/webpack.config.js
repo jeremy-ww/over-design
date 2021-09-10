@@ -22,6 +22,7 @@ const config = {
     rules: [
       {
         test: /\.(js|jsx|mjs|ts|tsx)$/,
+        // https://github.com/cypress-io/cypress/tree/develop/npm/react/cypress/component/advanced/mocking-imports
         exclude: excludeNodeModulesForAllOS(['react-redux', 'react-router-dom']),
         use: [
           'thread-loader',
