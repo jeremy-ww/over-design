@@ -44,7 +44,7 @@ export default function HelloWorld() {
       <Chip
         label={
           <>
-            {t('useGetAFailedAPIQuery')}
+            {t('useGetAFailedAPIQuery')}:{' '}
             {useGetAFailedAPIQueryLoading ? t('Loading') + '...' : failedError?.data?.description}
           </>
         }
