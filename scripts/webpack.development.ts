@@ -13,8 +13,6 @@ import { requireFromProjectCWD } from './utils/path-resolve';
 import reviseWebpack from './utils/revise-webpack';
 import base from './webpack.base';
 
-const HotModuleReplacementPlugin = webpack.HotModuleReplacementPlugin;
-
 function printInstructions(urls: { localUrlForTerminal: string; lanUrlForTerminal?: string }) {
   console.log();
   console.log(
@@ -62,6 +60,7 @@ const config: webpack.Configuration = {
     lazyCompilation: true,
   },
   devServer: {
+    hot: true,
     port: dotEnv.PORT,
     compress: true,
     // @ts-ignore
@@ -93,7 +92,6 @@ const config: webpack.Configuration = {
       title: requireFromProjectCWD('./package.json').name,
       template: './static/index.html',
     }),
-    new HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin({
       overlay: false,
       library: dotEnv.UNIQUE_NAME + 'ReactRefresh',
