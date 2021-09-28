@@ -4,12 +4,12 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import clearConsole from 'react-dev-utils/clearConsole';
 import { prepareUrls } from 'react-dev-utils/WebpackDevServerUtils';
 import webpack from 'webpack';
-import type devServer from 'webpack-dev-server';
+// just in case you run into any typescript error when configuring `devServer`
+import 'webpack-dev-server';
 import { merge } from 'webpack-merge';
 import { GenerateSW } from 'workbox-webpack-plugin';
 import { dotEnv } from './utils/load-config';
 import { requireFromProjectCWD } from './utils/path-resolve';
-// just in case you run into any typescript error when configuring `devServer`
 import reviseWebpack from './utils/revise-webpack';
 import base from './webpack.base';
 
@@ -41,7 +41,7 @@ class ClearWebpackDevServerMessagePlugin {
   }
 }
 
-const config: webpack.Configuration & { devServer: any } = {
+const config: webpack.Configuration = {
   mode: 'development',
   devtool: 'eval-source-map',
   module: {
