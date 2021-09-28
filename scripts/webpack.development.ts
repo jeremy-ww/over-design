@@ -65,16 +65,22 @@ const config: webpack.Configuration = {
     hot: true,
     port: dotEnv.PORT,
     compress: true,
-    disableHostCheck: true,
-    transportMode: 'ws',
-    injectClient: true,
+    // @ts-ignore
+    allowedHosts: 'all',
+    // @ts-ignore
+    webSocketServer: 'ws',
     historyApiFallback: {
       disableDotRule: true,
     },
     // NOTE: use this for debugging
     // stats: 'verbose',
-    overlay: {
-      errors: true,
+
+    // @ts-ignore
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false,
+      },
     },
     headers: {
       'Access-Control-Allow-Origin': '*',
