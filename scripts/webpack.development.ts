@@ -41,7 +41,7 @@ class ClearWebpackDevServerMessagePlugin {
   }
 }
 
-const config: webpack.Configuration & { devServer: devServer.Configuration } = {
+const config: webpack.Configuration & { devServer: any } = {
   mode: 'development',
   devtool: 'eval-source-map',
   module: {
@@ -91,7 +91,7 @@ const config: webpack.Configuration & { devServer: devServer.Configuration } = {
     new HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin({
       overlay: false,
-      library: dotEnv.UNIQUE_NAME + 'ReactRefresh'
+      library: dotEnv.UNIQUE_NAME + 'ReactRefresh',
     }),
     false && new GenerateSW(),
   ].filter((v): v is webpack.WebpackPluginInstance => Boolean(v)),
