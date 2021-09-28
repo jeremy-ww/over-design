@@ -62,7 +62,6 @@ const config: webpack.Configuration = {
     lazyCompilation: true,
   },
   devServer: {
-    hot: true,
     port: dotEnv.PORT,
     compress: true,
     // @ts-ignore
