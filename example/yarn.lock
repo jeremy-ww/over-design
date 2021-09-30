@@ -8360,10 +8360,10 @@ outpipe@^1.1.0:
   dependencies:
     shell-quote "^1.4.2"
 
-overd@1.0.22:
-  version "1.0.22"
-  resolved "https://registry.npmjs.org/overd/-/overd-1.0.22.tgz#a0a2447e77b14ce438a55c15ed489519828361a0"
-  integrity sha512-IZpyY+Ry6FoaL/KjDboRTiKWLhzPPDaHpWHrDE/09PRK9FKtl71fuh3vLUcksZNcwPJf78Om4J1YEShRiOycVw==
+overd@1.0.23:
+  version "1.0.23"
+  resolved "https://registry.npmjs.org/overd/-/overd-1.0.23.tgz#ba921a18698b56c5cb482edaf40be17dcb3626b1"
+  integrity sha512-cgPM649nxTsuBckVJgyb7sshOUZNrXd8FMPxSohbF/eOAaav+GtpwBXe43rv8Z5a0gxB7Ffq4GLjVYxrkCvkVg==
   dependencies:
     "@intervolga/optimize-cssnano-plugin" "1.0.6"
     "@pmmmwh/react-refresh-webpack-plugin" "0.5.1"
