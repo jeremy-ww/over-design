@@ -42,11 +42,11 @@ const config: webpack.Configuration = {
           name: 'vendors',
           test: /[\\/]node_modules[\\/]/,
           priority: 10,
-          chunks: 'all',
+          chunks: 'initial',
           enforce: true,
         },
-        common: {
-          name: 'common',
+        commons: {
+          name: 'commons',
           minChunks: 2,
           chunks: 'all',
           reuseExistingChunk: true,
