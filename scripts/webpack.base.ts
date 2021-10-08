@@ -15,13 +15,12 @@ const config = {
     crossOriginLoading: 'anonymous',
     // NOTE: for non-initial chunk
     chunkFilename: 'assets/js/[name].chunk.js',
-    uniqueName: dotEnv.UNIQUE_NAME
+    uniqueName: dotEnv.UNIQUE_NAME,
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js'],
   },
   module: {
-    // noParse: '',
     strictExportPresence: true,
     generator: {
       asset: {
