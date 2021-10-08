@@ -55,7 +55,6 @@ const config: webpack.Configuration = {
       maxAsyncRequests: Infinity,
       maxInitialRequests: Infinity,
     },
-    mergeDuplicateChunks: true,
     runtimeChunk: true,
     minimize: true,
     minimizer: [
