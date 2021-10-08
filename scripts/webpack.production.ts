@@ -57,7 +57,6 @@ const config: webpack.Configuration = {
     },
     mergeDuplicateChunks: true,
     runtimeChunk: true,
-    noEmitOnErrors: true,
     minimize: true,
     minimizer: [
       new TerserPlugin({
