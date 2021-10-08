@@ -5,7 +5,7 @@ import clearConsole from 'react-dev-utils/clearConsole';
 import { prepareUrls } from 'react-dev-utils/WebpackDevServerUtils';
 import webpack from 'webpack';
 // just in case you run into any typescript error when configuring `devServer`
-import 'webpack-dev-server';
+// import 'webpack-dev-server';
 import { merge } from 'webpack-merge';
 import { GenerateSW } from 'workbox-webpack-plugin';
 import { dotEnv } from './utils/load-config';
@@ -65,7 +65,6 @@ const config: webpack.Configuration = {
     compress: true,
     // @ts-ignore
     allowedHosts: 'all',
-    // @ts-ignore
     webSocketServer: 'ws',
     historyApiFallback: {
       disableDotRule: true,
@@ -73,7 +72,6 @@ const config: webpack.Configuration = {
     // NOTE: use this for debugging
     // stats: 'verbose',
 
-    // @ts-ignore
     client: {
       overlay: {
         errors: true,

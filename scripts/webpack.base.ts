@@ -6,7 +6,7 @@ import webpack from 'webpack';
 import { dotEnv, dotEnvPath } from './utils/load-config';
 import { pathResolve, requireFromProjectCWD } from './utils/path-resolve';
 
-const config = {
+const config: webpack.Configuration = {
   entry: './src/index',
   output: {
     path: pathResolve('./dist'),
@@ -50,9 +50,7 @@ const config = {
       },
     ],
   },
-  // @ts-ignore
   plugins: [
-    // @ts-ignore
     new webpack.EnvironmentPlugin({
       // it seems that cypress-webpack will do this for us
       // NODE_ENV: 'test',
@@ -76,7 +74,6 @@ const config = {
         return ['webpack', 'querystring'].includes(instance.name);
       },
     }),
-    // @ts-ignore
     new ScriptExtHtmlWebpackPlugin({
       custom: {
         test: /\.js$/,
@@ -89,6 +86,6 @@ const config = {
       path: dotEnvPath,
     }),
   ],
-} as webpack.Configuration;
+};
 
 export default config;

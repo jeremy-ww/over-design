@@ -33,6 +33,8 @@ const config: webpack.Configuration = {
     // NOTE: use this two for debugging
     // chunkIds: 'named',
     // moduleIds: 'named',
+    chunkIds: 'deterministic',
+    moduleIds: 'deterministic',
     /**
      * @see https://github.com/webpack/webpack/blob/master/examples/common-chunk-and-vendor-chunk/webpack.config.js
      */
