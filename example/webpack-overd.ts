@@ -16,17 +16,4 @@ export default function overd(config: Configuration) {
   if (config.output) {
     config.output.publicPath = '/over-design/';
   }
-
-  if (config.optimization && config.optimization.minimizer) {
-    config.optimization.minimizer = [
-      new ESBuildMinifyPlugin({
-        target: 'es2015',
-        css: true,
-      }),
-    ];
-  }
-
-  config.devtool = 'source-map';
-
-  console.log(config);
 }
