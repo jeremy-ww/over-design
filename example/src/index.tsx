@@ -15,7 +15,6 @@ i18n
   .init({
     debug: true,
     fallbackLng: 'en',
-    lowerCaseLng: true,
     load: 'currentOnly',
 
     interpolation: {
