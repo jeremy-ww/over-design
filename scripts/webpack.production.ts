@@ -19,7 +19,7 @@ const config: webpack.Configuration = {
     // NOTE: for non-initial chunk
     chunkFilename: 'assets/js/[name].[chunkhash:8].chunk.js',
   },
-  devtool: 'source-map',
+  devtool: 'hidden-source-map',
   module: {
     rules: [
       {
