@@ -2,6 +2,7 @@ import { css } from '@linaria/core';
 import { Chip } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
+import NoData from './NoData.svg';
 import { helloWorldAPI } from './slice';
 
 interface RequestError {
@@ -32,6 +33,7 @@ export default function HelloWorld() {
         }
       `}
     >
+      <img src={NoData} alt="" />
       <Chip
         label={
           <>
