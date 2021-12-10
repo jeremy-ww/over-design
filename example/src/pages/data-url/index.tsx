@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function DataURL() {
   return (
-    <>
+    <section>
       <div
         className={css`
           width: 200px;
@@ -22,6 +22,6 @@ export default function DataURL() {
       </div>
 
       <img src={NoData} alt="" />
-    </>
+    </section>
   );
 }

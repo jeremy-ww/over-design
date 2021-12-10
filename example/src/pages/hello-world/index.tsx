@@ -1,7 +1,7 @@
 import { css } from '@linaria/core';
 import { Chip } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { helloWorldAPI } from './slice';
 
@@ -15,7 +15,7 @@ export default function HelloWorld() {
     helloWorldAPI.useGetAFailedAPIQuery<RequestError & { isLoading: boolean }>({
       __disableNotification: true,
     });
-  const history = useHistory();
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   return (
@@ -55,7 +55,7 @@ export default function HelloWorld() {
         onClick={() => {
           const searchString = new URLSearchParams();
           searchString.append('s', Math.random().toString());
-          history.push(location.pathname + '?' + searchString.toString());
+          navigate(location.pathname + '?' + searchString.toString());
         }}
         clickable
         label={<>{t('useHistory')}</>}
