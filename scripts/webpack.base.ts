@@ -22,11 +22,6 @@ const config: webpack.Configuration = {
   },
   module: {
     strictExportPresence: true,
-    generator: {
-      asset: {
-        filename: 'assets/static/[hash][ext][query]',
-      },
-    },
     rules: [
       {
         test: /\.(js|jsx|mjs|ts|tsx)$/,
