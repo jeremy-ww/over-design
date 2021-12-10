@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { initReactI18next } from 'react-i18next';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import store from 'src/common/store';
 
 i18n
@@ -27,15 +27,23 @@ i18n
   });
 
 const HelloWorld = React.lazy(() => import('src/pages/hello-world'));
+const DataURL = React.lazy(() => import('src/pages/data-url'));
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-        <React.Suspense fallback="Loading...">
-          <HelloWorld />
-        </React.Suspense>
-      </Router>
+      <React.Suspense fallback="Loading...">
+        <Router basename="/over-design">
+          <Switch>
+            <Route path="/" exact>
+              <HelloWorld />
+            </Route>
+            <Route path="/data-url">
+              <DataURL />
+            </Route>
+          </Switch>
+        </Router>
+      </React.Suspense>
     </Provider>
   </React.StrictMode>,
   document.querySelector('#root'),
