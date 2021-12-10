@@ -8220,10 +8220,10 @@ outpipe@^1.1.0:
   dependencies:
     shell-quote "^1.4.2"
 
-overd@1.0.28:
-  version "1.0.28"
-  resolved "https://registry.npmjs.org/overd/-/overd-1.0.28.tgz#3afcf9b49fd3b3f26656f35fb1dcab467b4bca83"
-  integrity sha512-Nz/fvOyBvuCixheZ+/1n2GLdo+5wx955ThoWFvtvZ3spbSrVArBAowoQob7xdTDlq2/LbO0A2OxKnnMZtpiA2g==
+overd@1.0.29:
+  version "1.0.29"
+  resolved "https://registry.npmjs.org/overd/-/overd-1.0.29.tgz#f574c4ac2d428a722d1fe31d54bcb6a113399afd"
+  integrity sha512-U9CZt4WE3whE/trKjwp9iuINuIzE9B9zGJHknwFIDSm0CupQ9zMNAyJlTLvp0hHTRmQFli6BZngHqcs41+qUbA==
   dependencies:
     "@intervolga/optimize-cssnano-plugin" "1.0.6"
     "@pmmmwh/react-refresh-webpack-plugin" "0.5.1"
