@@ -17,5 +17,11 @@
     "noEmit": true,
     "baseUrl": "."
   },
-  "exclude": ["./example/"]
+  "exclude": ["./example/"],
+  "ts-node": {
+    "compilerOptions": {
+      "target": "ES3",
+      "module": "CommonJS"
+    }
+  }
 }

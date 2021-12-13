@@ -39,6 +39,7 @@ class ClearWebpackDevServerMessagePlugin {
   }
 }
 
+//  Use `./node_modules/.bin/ts-node  ./scripts/webpack.development.ts` to check the availability for this file.
 const config: webpack.Configuration = {
   mode: 'development',
   devtool: 'eval-source-map',

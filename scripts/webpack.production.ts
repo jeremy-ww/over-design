@@ -9,6 +9,7 @@ import { dotEnv } from './utils/load-config';
 import reviseWebpack from './utils/revise-webpack';
 import base from './webpack.base';
 
+//  Use `./node_modules/.bin/ts-node  ./scripts/webpack.development.ts` to check the availability for this file.
 const config: webpack.Configuration = {
   mode: 'production',
   bail: true,
