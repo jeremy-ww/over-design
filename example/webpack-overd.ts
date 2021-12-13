@@ -13,7 +13,7 @@ export default function overd(config: Configuration) {
       options: { sourceMap: true },
     });
   }
-  if (config.output) {
+  if (config.output && config.mode === 'production') {
     config.output.publicPath = '/over-design/';
   }
 }
