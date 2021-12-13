@@ -14,10 +14,8 @@ describe('HelloWorld', () => {
       body: 'Error',
     });
 
-    cy.stub(ReactRouterDOM, 'useHistory').returns({
-      push: () => {
-        console.info('disable history push in testing environment.');
-      },
+    cy.stub(ReactRouterDOM, 'useNavigate', () => {
+      console.info('disable history push in testing environment.');
     });
   });
 
