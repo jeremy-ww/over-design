@@ -14,8 +14,10 @@ export default function overd(config: Configuration) {
       options: { sourceMap: true },
     });
   }
-  if (config.output && config.devServer && config.devServer.historyApiFallback) {
+  if (config.output) {
     config.output.publicPath = '/over-design/';
+  }
+  if (config.devServer && config.devServer.historyApiFallback) {
     (config.devServer.historyApiFallback as Mutable<connectHistoryApiFallback.Options>).index =
       '/over-design/index.html';
   }
