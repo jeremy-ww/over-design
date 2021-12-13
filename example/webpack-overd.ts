@@ -1,4 +1,7 @@
 import type { Configuration, RuleSetRule, RuleSetUseItem } from 'webpack';
+import * as connectHistoryApiFallback from 'connect-history-api-fallback';
+
+type Mutable<T> = { -readonly [P in keyof T]: T[P] extends ReadonlyArray<infer U> ? U[] : T[P] };
 
 export default function overd(config: Configuration) {
   const jsRuleTest = /\.(js|jsx|mjs|ts|tsx)$/.toString();
@@ -11,7 +14,9 @@ export default function overd(config: Configuration) {
       options: { sourceMap: true },
     });
   }
-  if (config.output) {
+  if (config.output && config.devServer && config.devServer.historyApiFallback) {
     config.output.publicPath = '/over-design/';
+    (config.devServer.historyApiFallback as Mutable<connectHistoryApiFallback.Options>).index =
+      '/over-design/index.html';
   }
 }

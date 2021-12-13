@@ -35,7 +35,7 @@ ReactDOM.render(
       <React.Suspense fallback="Loading...">
         <BrowserRouter>
           <Routes>
-            <Route path="/over-design/" element={<HelloWorld />}>
+            <Route path="/over-design/" element={<HelloWorld />} />
             <Route path="/over-design/data-url" element={<DataURL />} />
           </Routes>
         </BrowserRouter>
