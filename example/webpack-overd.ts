@@ -1,5 +1,3 @@
-import { ESBuildMinifyPlugin } from 'esbuild-loader';
-import path from 'path';
 import type { Configuration, RuleSetRule, RuleSetUseItem } from 'webpack';
 
 export default function overd(config: Configuration) {
@@ -13,7 +11,7 @@ export default function overd(config: Configuration) {
       options: { sourceMap: true },
     });
   }
-  if (config.output && config.mode === 'production') {
+  if (config.output) {
     config.output.publicPath = '/over-design/';
   }
 }
