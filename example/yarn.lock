@@ -4022,11 +4022,6 @@ chalk@4.1.2, chalk@^4.0.0, chalk@^4.1.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chalk@5.0.0:
-  version "5.0.0"
-  resolved "https://registry.npmjs.org/chalk/-/chalk-5.0.0.tgz#bd96c6bb8e02b96e08c0c3ee2a9d90e050c7b832"
-  integrity sha512-/duVOqst+luxCQRKEo4bNxinsOQtMP80ZYm7mMqzuh5PociNL0PvmHFvREJ9ueYL2TxlHjBcmLCdmocx9Vg+IQ==
-
 check-more-types@2.24.0, check-more-types@^2.24.0:
   version "2.24.0"
   resolved "https://registry.npmjs.org/check-more-types/-/check-more-types-2.24.0.tgz#1420ffb10fd444dcfc79b43891bbfffd32a84600"
@@ -8651,10 +8646,10 @@ outpipe@^1.1.0:
   dependencies:
     shell-quote "^1.4.2"
 
-overd@1.0.30:
-  version "1.0.30"
-  resolved "https://registry.npmjs.org/overd/-/overd-1.0.30.tgz#954afb79f01afd475ca89dd9887cf9142cebc23f"
-  integrity sha512-GR0lAv4CZsHytzmW+PW+I+YMf1SJAw253Tn5F7FzR/BXe/QJ867d4mhYLDtZiNvJ5GwXg7LgJXGvDVmvpVRdyw==
+overd@1.0.31:
+  version "1.0.31"
+  resolved "https://registry.npmjs.org/overd/-/overd-1.0.31.tgz#9a80336942e5c7609c893b824daadbc213bfdbba"
+  integrity sha512-xhoGBiChmmUciDx/1/Nkifu+6i3SDRlgKKE7NiDPxHqrhnqFx+7zt8hsjizFK+sVZXzAzE+1e9IhRE8fVJWHlw==
   dependencies:
     "@intervolga/optimize-cssnano-plugin" "1.0.6"
     "@pmmmwh/react-refresh-webpack-plugin" "0.5.3"
@@ -8669,7 +8664,7 @@ overd@1.0.30:
     "@types/webpack-dev-server" "4.5.0"
     "@types/workbox-webpack-plugin" "5.1.8"
     babel-loader "8.2.3"
-    chalk "5.0.0"
+    chalk "4.1.2"
     copy-webpack-plugin "10.1.0"
     cross-env "7.0.3"
     css-loader "6.5.1"
