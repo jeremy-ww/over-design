@@ -1951,7 +1951,21 @@
   resolved "https://registry.npmjs.org/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
   integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
 
-"@linaria/babel-preset@3.0.0-beta.15", "@linaria/babel-preset@^3.0.0-beta.15":
+"@linaria/babel-preset@3.0.0-beta.4":
+  version "3.0.0-beta.4"
+  resolved "https://registry.npmjs.org/@linaria/babel-preset/-/babel-preset-3.0.0-beta.4.tgz#22fb043b1f61710ad98f26d756d368e5bfed8e47"
+  integrity sha512-Bjsk4VZUQXK3u04MuLlyP/+/tDd7bWeLXYCOnq4US9H2QFRdka97fm6hH34SRinoHm9fSPCHrj9d+KtY8ge2wg==
+  dependencies:
+    "@babel/generator" ">=7"
+    "@babel/plugin-syntax-dynamic-import" ">=7"
+    "@babel/template" ">=7"
+    "@linaria/core" "^3.0.0-beta.4"
+    "@linaria/logger" "^3.0.0-beta.3"
+    cosmiconfig "^5.1.0"
+    source-map "^0.6.1"
+    stylis "^3.5.4"
+
+"@linaria/babel-preset@^3.0.0-beta.13", "@linaria/babel-preset@^3.0.0-beta.15", "@linaria/babel-preset@^3.0.0-beta.7":
   version "3.0.0-beta.15"
   resolved "https://registry.npmjs.org/@linaria/babel-preset/-/babel-preset-3.0.0-beta.15.tgz#d8bd3d00d1f8b51209054fe04b0245a94c6f606c"
   integrity sha512-oJIyUn2SCIH4vW1vBxOsN2BTU6Y0mq4ywkqxwQ1py4HgtEnYlvpq4Ca0ba7vXvMWk1pMCgd/V+VpMjbr19uXgQ==
@@ -1966,14 +1980,19 @@
     source-map "^0.7.3"
     stylis "^3.5.4"
 
-"@linaria/core@3.0.0-beta.15", "@linaria/core@^3.0.0-beta.15":
+"@linaria/core@3.0.0-beta.4":
+  version "3.0.0-beta.4"
+  resolved "https://registry.npmjs.org/@linaria/core/-/core-3.0.0-beta.4.tgz#ae878874773c15b189792e277771f68fef18019a"
+  integrity sha512-NzxeMDxRt57nR6tLFZ8xIstp5ld9JQPIyp9+TKtQZhoX3oJuUru+S4vXPr1Gach6VaqKKKT5T6fmJgJl9MMprw==
+
+"@linaria/core@^3.0.0-beta.15", "@linaria/core@^3.0.0-beta.4":
   version "3.0.0-beta.15"
   resolved "https://registry.npmjs.org/@linaria/core/-/core-3.0.0-beta.15.tgz#570fab9430e5b4f2677fbb4eaeda66c041030f08"
   integrity sha512-9sqPCcWIlA1zTck45uNGqrjtnWj5HGa7Lxbaw1ZsCcm6K6WcMVyOqW3OQkMBHuf3OzC50Mzb8z7d7d6Rpg8uFw==
   dependencies:
     "@linaria/utils" "^3.0.0-beta.15"
 
-"@linaria/logger@^3.0.0-beta.15":
+"@linaria/logger@^3.0.0-beta.15", "@linaria/logger@^3.0.0-beta.3":
   version "3.0.0-beta.15"
   resolved "https://registry.npmjs.org/@linaria/logger/-/logger-3.0.0-beta.15.tgz#be0490e71da8e5e637ad5aaef59b0a021dc4fec3"
   integrity sha512-tKytEEus47CZ4/7pbgRYD+Por4tH7/5Um2Quof6Qamd7Xj7brhmAPRRoZzYu4pht+S7V9oNL0X4IBSmNIOYRZw==
@@ -1981,50 +2000,49 @@
     debug "^4.1.1"
     picocolors "^1.0.0"
 
-"@linaria/preeval@^3.0.0-beta.15":
+"@linaria/preeval@^3.0.0-beta.7":
   version "3.0.0-beta.15"
   resolved "https://registry.npmjs.org/@linaria/preeval/-/preeval-3.0.0-beta.15.tgz#dabcfc3e42de95e5521d002d35667fc67d779e3f"
   integrity sha512-621wPHry4L4YFRdMXE0wxVKsocFL2KC+RECSdc6Oy4MVtMMeTyps671pV27+kQldWIRvp1ZsdhknNMEug+rKdg==
   dependencies:
     "@linaria/babel-preset" "^3.0.0-beta.15"
 
-"@linaria/react@3.0.0-beta.15":
-  version "3.0.0-beta.15"
-  resolved "https://registry.npmjs.org/@linaria/react/-/react-3.0.0-beta.15.tgz#dbd3d17dc6429d7ba46da492992547ce8ed8da39"
-  integrity sha512-1s/4DM+kAg3AdfAiK8vu6NBe3v+il7C3JjD0GBTUkZBJDOQ/4Vm543+PhlyL9t3tmmu9Xxg+in7PFNr7ODCTTQ==
+"@linaria/react@3.0.0-beta.7":
+  version "3.0.0-beta.7"
+  resolved "https://registry.npmjs.org/@linaria/react/-/react-3.0.0-beta.7.tgz#a1983acd752cda5c0b740735b9112a663dfd180d"
+  integrity sha512-sAup35gSRuenwbziPhp1hmkfziY72BS9jr5Lp0GQ9NRG5fnxYBQ36TY4rrGE09mSBjw/uq2i7XsvYL8MNm1f1Q==
   dependencies:
     "@emotion/is-prop-valid" "^0.8.8"
-    "@linaria/core" "^3.0.0-beta.15"
+    "@linaria/core" "^3.0.0-beta.4"
 
-"@linaria/shaker@3.0.0-beta.15":
-  version "3.0.0-beta.15"
-  resolved "https://registry.npmjs.org/@linaria/shaker/-/shaker-3.0.0-beta.15.tgz#8f4835ffe0185afbd14a17dcf4fb6ca042331250"
-  integrity sha512-+PZRf8hM7fO4RiNpVVYUhIXQPPKYxowXYMaiILq/9zGcy2tQ6onqsKaQ71SCXvVrL+gVo6A/R13njOCJRZRTew==
+"@linaria/shaker@3.0.0-beta.7":
+  version "3.0.0-beta.7"
+  resolved "https://registry.npmjs.org/@linaria/shaker/-/shaker-3.0.0-beta.7.tgz#d21363493c5abd07a55370295f9022e31753de9f"
+  integrity sha512-fWDbbKcS8EiAnoNhTQa+2Or7QyR3Ofyqjtcrb1aeLN2ecVI2u7B5jAZgVPg9euTnhQ2ieUU3G9hh1INkoGKS/A==
   dependencies:
     "@babel/generator" ">=7"
     "@babel/plugin-transform-runtime" ">=7"
     "@babel/plugin-transform-template-literals" ">=7"
     "@babel/preset-env" ">=7"
-    "@linaria/babel-preset" "^3.0.0-beta.15"
-    "@linaria/logger" "^3.0.0-beta.15"
-    "@linaria/preeval" "^3.0.0-beta.15"
+    "@linaria/babel-preset" "^3.0.0-beta.7"
+    "@linaria/logger" "^3.0.0-beta.3"
+    "@linaria/preeval" "^3.0.0-beta.7"
     babel-plugin-transform-react-remove-prop-types "^0.4.24"
-    ts-invariant "^0.9.0"
 
 "@linaria/utils@^3.0.0-beta.15":
   version "3.0.0-beta.15"
   resolved "https://registry.npmjs.org/@linaria/utils/-/utils-3.0.0-beta.15.tgz#001d8dacf113c443960651593144e64bf39e995a"
   integrity sha512-CF0T8ueWjHK8zJT0oqdAq8JgL9a40WCyE5/t6q8WPvC7xRdsrfyUKA7Z8qEsQse2LKESVWJ5cvkkn8J80B6c+A==
 
-"@linaria/webpack-loader@3.0.0-beta.15":
-  version "3.0.0-beta.15"
-  resolved "https://registry.npmjs.org/@linaria/webpack-loader/-/webpack-loader-3.0.0-beta.15.tgz#cdb8d8993685f0da8dbbe8917ea4bbc8a1ad1f1f"
-  integrity sha512-SdzlYP1ImQXu2J/rphJ/mfllyrTX/n4oXgqOhYFOvXvqWISMjIPf4M/q09ipGDHWXQAb4E9ti9AZUvDNB4ntBA==
+"@linaria/webpack-loader@3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://registry.npmjs.org/@linaria/webpack-loader/-/webpack-loader-3.0.0-beta.13.tgz#766a9445386ee4a2b5e1e7f9cce9239a66292a3e"
+  integrity sha512-c05FzE3aQLWDrCHnvBUU7tIdkbfrOCWdm5GTuF+pcK+TBZ2kF8qXO6InEEqyXeol5HWp5fuwC6WnWGFKAcUqRQ==
   dependencies:
-    "@linaria/webpack4-loader" "^3.0.0-beta.15"
-    "@linaria/webpack5-loader" "^3.0.0-beta.15"
+    "@linaria/webpack4-loader" "^3.0.0-beta.13"
+    "@linaria/webpack5-loader" "^3.0.0-beta.13"
 
-"@linaria/webpack4-loader@^3.0.0-beta.15":
+"@linaria/webpack4-loader@^3.0.0-beta.13":
   version "3.0.0-beta.16"
   resolved "https://registry.npmjs.org/@linaria/webpack4-loader/-/webpack4-loader-3.0.0-beta.16.tgz#a0bddd9ec14c901cc0fe4ea161a4a04ea596c4cd"
   integrity sha512-p1QrUpxQVt/Ki2MnSpvdDtmzjlD+EGZq3js3eckQcRX9+fIs5+2OVhJS555saxhFpqCHon8FX6gDvkyidkjUEg==
@@ -2035,16 +2053,19 @@
     loader-utils "^1.2.3"
     mkdirp "^0.5.1"
 
-"@linaria/webpack5-loader@^3.0.0-beta.15":
-  version "3.0.0-beta.16"
-  resolved "https://registry.npmjs.org/@linaria/webpack5-loader/-/webpack5-loader-3.0.0-beta.16.tgz#99f10ac3fd48204faca762c4e4ab662ce05d22c6"
-  integrity sha512-9cb4GTdWNTkUHsClqmTWxUOb/CCqbIOLKusTCWLYdpA19Gh3gUn0qyeuF85fWRg/cv7ojfWgIkvGuU8U7sniiw==
+"@linaria/webpack5-loader@3.0.0-beta.13", "@linaria/webpack5-loader@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://registry.npmjs.org/@linaria/webpack5-loader/-/webpack5-loader-3.0.0-beta.13.tgz#2c6332780739cf793be7cf9d4b26c591e66cb879"
+  integrity sha512-SQ4Y+vKQLYMbNz3frZZHSYvegL50gS3bj9+6KRGv9pP6SfQCuy+2hsuoVpaF3yWTAaT31sH20OpR4+EergT9Rw==
   dependencies:
-    "@linaria/babel-preset" "^3.0.0-beta.15"
-    "@linaria/logger" "^3.0.0-beta.15"
+    "@linaria/babel-preset" "^3.0.0-beta.13"
+    "@linaria/logger" "^3.0.0-beta.3"
+    cosmiconfig "^5.1.0"
     enhanced-resolve "^5.3.1"
+    find-yarn-workspace-root "^1.2.1"
     loader-utils "^2.0.0"
     mkdirp "^0.5.1"
+    normalize-path "^3.0.0"
 
 "@material-ui/core@4.12.3":
   version "4.12.3"
@@ -6138,7 +6159,7 @@ find-webpack@2.2.1:
     find-yarn-workspace-root "1.2.1"
     mocked-env "1.3.2"
 
-find-yarn-workspace-root@1.2.1:
+find-yarn-workspace-root@1.2.1, find-yarn-workspace-root@^1.2.1:
   version "1.2.1"
   resolved "https://registry.npmjs.org/find-yarn-workspace-root/-/find-yarn-workspace-root-1.2.1.tgz#40eb8e6e7c2502ddfaa2577c176f221422f860db"
   integrity sha512-dVtfb0WuQG+8Ag2uWkbG79hOUzEsRrhBzgfn86g2sJPkzmcpGdghbNTfUKGTxymFrY/tLIodDzLoW9nOJ4FY8Q==
@@ -10935,13 +10956,6 @@ tr46@^1.0.1:
   dependencies:
     punycode "^2.1.0"
 
-ts-invariant@^0.9.0:
-  version "0.9.3"
-  resolved "https://registry.npmjs.org/ts-invariant/-/ts-invariant-0.9.3.tgz#4b41e0a80c2530a56ce4b8fd4e14183aaac0efa8"
-  integrity sha512-HinBlTbFslQI0OHP07JLsSXPibSegec6r9ai5xxq/qHYCsIQbzpymLpDhAUsnXcSrDEcd0L62L8vsOEdzM0qlA==
-  dependencies:
-    tslib "^2.1.0"
-
 ts-node@10.4.0:
   version "10.4.0"
   resolved "https://registry.npmjs.org/ts-node/-/ts-node-10.4.0.tgz#680f88945885f4e6cf450e7f0d6223dd404895f7"
@@ -10979,11 +10993,6 @@ tslib@^2.0.3:
   version "2.3.0"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.3.0.tgz#803b8cdab3e12ba581a4ca41c8839bbb0dacb09e"
   integrity sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==
-
-tslib@^2.1.0:
-  version "2.3.1"
-  resolved "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
-  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
 tsutils@^3.21.0:
   version "3.21.0"
