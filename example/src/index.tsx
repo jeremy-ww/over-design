@@ -31,6 +31,14 @@ const DataURL = React.lazy(() => import('src/pages/data-url'));
 
 ReactDOM.render(
   <React.StrictMode>
+    <ol>
+      <li>
+        <a href="/over-design/">Main</a>
+      </li>
+      <li>
+        <a href="/over-design/data-url">Data URL</a>
+      </li>
+    </ol>
     <Provider store={store}>
       <React.Suspense fallback="Loading...">
         <BrowserRouter>
