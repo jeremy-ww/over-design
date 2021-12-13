@@ -8,7 +8,6 @@ export default function overd(config: Configuration) {
     ({ test }) => test?.toString() === jsRuleTest,
   );
   if (jsRule?.use) {
-    (jsRule.use as RuleSetUseItem[]).splice(0, 1);
     (jsRule.use as RuleSetUseItem[]).push({
       loader: '@linaria/webpack-loader',
       options: { sourceMap: true },

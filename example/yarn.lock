@@ -2016,15 +2016,15 @@
   resolved "https://registry.npmjs.org/@linaria/utils/-/utils-3.0.0-beta.15.tgz#001d8dacf113c443960651593144e64bf39e995a"
   integrity sha512-CF0T8ueWjHK8zJT0oqdAq8JgL9a40WCyE5/t6q8WPvC7xRdsrfyUKA7Z8qEsQse2LKESVWJ5cvkkn8J80B6c+A==
 
-"@linaria/webpack-loader@3.0.0-beta.16":
-  version "3.0.0-beta.16"
-  resolved "https://registry.npmjs.org/@linaria/webpack-loader/-/webpack-loader-3.0.0-beta.16.tgz#f94df73b57050de3036c8ee076ff966bd182d40f"
-  integrity sha512-7/VQvt1VxEA6NZO0JTI3psPR8g9NDQGAvycCtf+4UKrg0Lv9elm0R3UR+4uk3OgIOaKumdV5IdA7WAnG5owGIw==
+"@linaria/webpack-loader@3.0.0-beta.15":
+  version "3.0.0-beta.15"
+  resolved "https://registry.npmjs.org/@linaria/webpack-loader/-/webpack-loader-3.0.0-beta.15.tgz#cdb8d8993685f0da8dbbe8917ea4bbc8a1ad1f1f"
+  integrity sha512-SdzlYP1ImQXu2J/rphJ/mfllyrTX/n4oXgqOhYFOvXvqWISMjIPf4M/q09ipGDHWXQAb4E9ti9AZUvDNB4ntBA==
   dependencies:
-    "@linaria/webpack4-loader" "^3.0.0-beta.16"
-    "@linaria/webpack5-loader" "^3.0.0-beta.16"
+    "@linaria/webpack4-loader" "^3.0.0-beta.15"
+    "@linaria/webpack5-loader" "^3.0.0-beta.15"
 
-"@linaria/webpack4-loader@^3.0.0-beta.16":
+"@linaria/webpack4-loader@^3.0.0-beta.15":
   version "3.0.0-beta.16"
   resolved "https://registry.npmjs.org/@linaria/webpack4-loader/-/webpack4-loader-3.0.0-beta.16.tgz#a0bddd9ec14c901cc0fe4ea161a4a04ea596c4cd"
   integrity sha512-p1QrUpxQVt/Ki2MnSpvdDtmzjlD+EGZq3js3eckQcRX9+fIs5+2OVhJS555saxhFpqCHon8FX6gDvkyidkjUEg==
@@ -2035,7 +2035,7 @@
     loader-utils "^1.2.3"
     mkdirp "^0.5.1"
 
-"@linaria/webpack5-loader@^3.0.0-beta.16":
+"@linaria/webpack5-loader@^3.0.0-beta.15":
   version "3.0.0-beta.16"
   resolved "https://registry.npmjs.org/@linaria/webpack5-loader/-/webpack5-loader-3.0.0-beta.16.tgz#99f10ac3fd48204faca762c4e4ab662ce05d22c6"
   integrity sha512-9cb4GTdWNTkUHsClqmTWxUOb/CCqbIOLKusTCWLYdpA19Gh3gUn0qyeuF85fWRg/cv7ojfWgIkvGuU8U7sniiw==
