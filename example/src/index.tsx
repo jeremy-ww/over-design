@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { initReactI18next } from 'react-i18next';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import store from 'src/common/store';
 
 i18n
@@ -31,17 +31,19 @@ const DataURL = React.lazy(() => import('src/pages/data-url'));
 
 ReactDOM.render(
   <React.StrictMode>
-    <ol>
-      <li>
-        <a href="/over-design/">Main</a>
-      </li>
-      <li>
-        <a href="/over-design/data-url">Data URL</a>
-      </li>
-    </ol>
     <Provider store={store}>
       <React.Suspense fallback="Loading...">
         <BrowserRouter>
+          <nav>
+            <ol>
+              <li>
+                <Link to="/over-design/">Main</Link>
+              </li>
+              <li>
+                <Link to="/over-design/data-url">Data URL</Link>
+              </li>
+            </ol>
+          </nav>
           <Routes>
             <Route path="/over-design/" element={<HelloWorld />} />
             <Route path="/over-design/data-url" element={<DataURL />} />
