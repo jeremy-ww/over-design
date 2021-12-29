@@ -1,22 +1,28 @@
 import { css } from '@linaria/core';
 import { Chip } from '@material-ui/core';
+import type { AxiosError } from 'axios';
 import { useTranslation } from 'react-i18next';
+import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
-
-import { helloWorldAPI } from './slice';
-
-interface RequestError {
-  error: { status: number; data: { description: string } };
-}
+import { instance } from 'src/common/api';
 
 export default function HelloWorld() {
-  const { data, isLoading: useGetASuccessAPIQueryLoading } = helloWorldAPI.useGetASuccessAPIQuery();
-  const { error: failedError, isLoading: useGetAFailedAPIQueryLoading } =
-    helloWorldAPI.useGetAFailedAPIQuery<RequestError & { isLoading: boolean }>({
-      __disableNotification: true,
-    });
   const navigate = useNavigate();
   const { t } = useTranslation();
+
+  const { isLoading: getASuccessAPIQueryLoading, data } = useQuery(
+    ['getASuccessAPIQueryLoading'],
+    () =>
+      instance.get<{
+        code: number;
+        description: string;
+      }>('/200'),
+  );
+
+  const { isLoading: getAFailedAPIQueryLoading, error } = useQuery<
+    any,
+    AxiosError<{ code: number; description: string }>
+  >(['getAFailedAPIQuery'], () => instance.get('/400'));
 
   return (
     <div
@@ -36,8 +42,8 @@ export default function HelloWorld() {
       <Chip
         label={
           <>
-            {t('useGetASuccessAPIQuery')}:{' '}
-            {useGetASuccessAPIQueryLoading ? t('Loading') + '...' : data?.description}
+            {t('getASuccessAPIQuery')}:{' '}
+            {getASuccessAPIQueryLoading ? t('Loading') + '...' : data?.description}
           </>
         }
       ></Chip>
@@ -45,8 +51,8 @@ export default function HelloWorld() {
       <Chip
         label={
           <>
-            {t('useGetAFailedAPIQuery')}:{' '}
-            {useGetAFailedAPIQueryLoading ? t('Loading') + '...' : failedError?.data?.description}
+            {t('getAFailedAPIQuery')}:{' '}
+            {getAFailedAPIQueryLoading ? t('Loading') + '...' : error?.response?.data.description}
           </>
         }
       ></Chip>

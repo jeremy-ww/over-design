@@ -7,6 +7,7 @@ import { initReactI18next } from 'react-i18next';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import store from 'src/common/store';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 i18n
   .use(initReactI18next)
@@ -29,27 +30,38 @@ i18n
 const HelloWorld = React.lazy(() => import('src/pages/hello-world'));
 const DataURL = React.lazy(() => import('src/pages/data-url'));
 
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: false,
+    },
+  },
+});
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <React.Suspense fallback="Loading...">
-        <BrowserRouter>
-          <nav>
-            <ol>
-              <li>
-                <Link to="/over-design/">Main</Link>
-              </li>
-              <li>
-                <Link to="/over-design/data-url">Data URL</Link>
-              </li>
-            </ol>
-          </nav>
-          <Routes>
-            <Route path="/over-design/" element={<HelloWorld />} />
-            <Route path="/over-design/data-url" element={<DataURL />} />
-          </Routes>
-        </BrowserRouter>
-      </React.Suspense>
+      <QueryClientProvider client={queryClient}>
+        <React.Suspense fallback="Loading...">
+          <BrowserRouter>
+            <nav>
+              <ol>
+                <li>
+                  <Link to="/over-design/">Main</Link>
+                </li>
+                <li>
+                  <Link to="/over-design/data-url">Data URL</Link>
+                </li>
+              </ol>
+            </nav>
+            <Routes>
+              <Route path="/over-design/" element={<HelloWorld />} />
+              <Route path="/over-design/data-url" element={<DataURL />} />
+            </Routes>
+          </BrowserRouter>
+        </React.Suspense>
+      </QueryClientProvider>
     </Provider>
   </React.StrictMode>,
   document.querySelector('#root'),

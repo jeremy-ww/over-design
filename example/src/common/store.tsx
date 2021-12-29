@@ -2,9 +2,9 @@
 /* eslint-disable global-require */
 import { configureStore, Middleware } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
-import helloWorldSlice, { helloWorldAPI } from 'src/pages/hello-world/slice';
+import helloWorldSlice from 'src/pages/hello-world/slice';
 
-const middlewares: Middleware[] = [helloWorldAPI.middleware];
+const middlewares: Middleware[] = [];
 
 /* istanbul ignore if */
 if (process.env.NODE_ENV === 'development') {
@@ -18,7 +18,6 @@ const store = configureStore({
   devTools: process.env.NODE_ENV !== 'production',
   reducer: {
     helloWorld: helloWorldSlice,
-    [helloWorldAPI.reducerPath]: helloWorldAPI.reducer,
   },
 });
 
