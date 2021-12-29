@@ -1,5 +1,7 @@
 {
-  "useGetASuccessAPIQuery": "useGetASuccessAPIQuery",
+  "getASuccessAPIQuery": "getASuccessAPIQuery",
+  "getAFailedAPIQuery": "getAFailedAPIQuery",
+  "Operation_Failed": "Operation failed",
   "Loading": "Loading",
   "useHistory": "useHistory"
 }
