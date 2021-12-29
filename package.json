@@ -58,7 +58,7 @@
     "yargs": "17.3.0"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=12.22.0"
   },
   "devDependencies": {}
 }
