@@ -6,8 +6,10 @@ import { queryClient } from '../../src/';
 
 export function mount(jsx: React.ReactNode) {
   return originalMount(
-    <QueryClientProvider client={queryClient}>
-      <Provider store={store}>{jsx}</Provider>
-    </QueryClientProvider>,
+    <main>
+      <QueryClientProvider client={queryClient}>
+        <Provider store={store}>{jsx}</Provider>
+      </QueryClientProvider>
+    </main>,
   );
 }
