@@ -11,10 +11,13 @@ export default function HelloWorld() {
   const { t } = useTranslation();
 
   const { isLoading: getASuccessAPIQueryLoading, data } = useQuery(['getASuccessAPIQuery'], () =>
-    instance.get<{
-      code: number;
-      description: string;
-    }>('/200'),
+    instance.get<
+      void,
+      {
+        code: number;
+        description: string;
+      }
+    >('/200'),
   );
 
   const { isLoading: getAFailedAPIQueryLoading, error } = useQuery<
