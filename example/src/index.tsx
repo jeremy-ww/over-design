@@ -7,7 +7,8 @@ import { initReactI18next } from 'react-i18next';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import store from 'src/common/store';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClientProvider } from 'react-query';
+import { queryClient } from './common/query';
 
 i18n
   .use(initReactI18next)
@@ -29,15 +30,6 @@ i18n
 
 const HelloWorld = React.lazy(() => import('src/pages/hello-world'));
 const DataURL = React.lazy(() => import('src/pages/data-url'));
-
-export const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-      retry: false,
-    },
-  },
-});
 
 ReactDOM.render(
   <React.StrictMode>

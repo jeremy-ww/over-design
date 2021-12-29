@@ -19,7 +19,7 @@ describe('HelloWorld', () => {
     });
   });
 
-  it.only('render no error', () => {
+  it('render no error', () => {
     mount(<HelloWorld />);
   });
 });
