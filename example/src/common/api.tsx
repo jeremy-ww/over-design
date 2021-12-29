@@ -6,10 +6,7 @@ export const instance = axios.create({
 });
 
 function onAPIRejected(error: AxiosError) {
-  console.error(
-    error.response?.data?.description ??
-      `${i18next.t('Operation_Failed', { defaultValue: 'Operation failed' })}.`,
-  );
+  console.error(error.response?.data?.description ?? `${i18next.t('Operation_Failed')}.`);
   return Promise.reject(error);
 }
 

@@ -1,5 +1,7 @@
 {
-  "useGetASuccessAPIQuery": "useGetASuccessAPIQuery",
+  "getASuccessAPIQuery": "getASuccessAPIQuery",
+  "getAFailedAPIQuery": "getAFailedAPIQuery",
+  "Operation_Failed": "操作失败",
   "Loading": "加载中",
   "useHistory": "useHistory"
 }
