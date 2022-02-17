@@ -1,9 +1,9 @@
-import type { Configuration, RuleSetRule, RuleSetUseItem } from 'webpack';
+import type { WebpackOptionsNormalized, RuleSetRule, RuleSetUseItem } from 'webpack';
 import * as connectHistoryApiFallback from 'connect-history-api-fallback';
 
 type Mutable<T> = { -readonly [P in keyof T]: T[P] extends ReadonlyArray<infer U> ? U[] : T[P] };
 
-export default function overd(config: Configuration) {
+export default function overd(config: WebpackOptionsNormalized) {
   const jsRuleTest = /\.(js|jsx|mjs|ts|tsx)$/.toString();
   const jsRule = (config?.module?.rules as RuleSetRule[])?.find(
     ({ test }) => test?.toString() === jsRuleTest,
