@@ -13,6 +13,13 @@ function serve() {
   nodemon({
     watch: [cwd('scripts'), './webpack-overd.ts', './babel.config.js'],
     ext: 'ts',
+    // For debugging purpose:
+    // Webpack@5 doesn't give the actual reason if the webpack.config.ts is not compilable.
+    // Use this command to figure out the error stack trace.
+    // exec: `cross-env NODE_ENV=development TS_NODE_PROJECT=${cwd(
+    //   'tsconfig-for-webpack-config.json',
+    //   true,
+    // )} ts-node ${cwd('scripts/webpack.development.ts', true)}`,
     exec: `cross-env NODE_ENV=development TS_NODE_PROJECT=${cwd(
       'tsconfig-for-webpack-config.json',
       true,
